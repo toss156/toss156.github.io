@@ -87,58 +87,43 @@
 
 
 
-<meta name="description" content="iOS自动化集成1.安装环境1.1 环境说明
-
-搭建机器：Mac mini
-开发工具：XCode v8.2.1
-Mac系统： OS X 10.12.5
-jenkins版：2.46
-sonarqube : 6.2
-fastlane : 2.9.1
-oclint : 0.11.1
+<meta name="description" content="iOS 开发规范命名规范统一要求
+尽量使用英文命名，同一个含义的不出现多个不同的单词
+命名才用驼峰命名法
+类名采用大驼峰（UpperCamelCase）类成员、方法小驼峰（lowerCamelCase）局部变量大小写首选小驼峰 
 
 
-1.2 安装jenkins 通过brew安装
-1brew install jenkins
- Mac上开机自启动方法
-1">
+
+视图命名
+ViewController 不要采用VC这样的缩写，统一简化为Controller
+UIView 级别的组件不要以 Controller 或 Displ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS自动化集成">
-<meta property="og:url" content="https://toss156.github.io/2017/03/14/iOS持续集成/index.html">
+<meta property="og:title" content="iOS代码规范">
+<meta property="og:url" content="https://toss156.github.io/2017/02/20/iOS代码规范/index.html">
 <meta property="og:site_name" content="Feng's Notes">
-<meta property="og:description" content="iOS自动化集成1.安装环境1.1 环境说明
-
-搭建机器：Mac mini
-开发工具：XCode v8.2.1
-Mac系统： OS X 10.12.5
-jenkins版：2.46
-sonarqube : 6.2
-fastlane : 2.9.1
-oclint : 0.11.1
+<meta property="og:description" content="iOS 开发规范命名规范统一要求
+尽量使用英文命名，同一个含义的不出现多个不同的单词
+命名才用驼峰命名法
+类名采用大驼峰（UpperCamelCase）类成员、方法小驼峰（lowerCamelCase）局部变量大小写首选小驼峰 
 
 
-1.2 安装jenkins 通过brew安装
-1brew install jenkins
- Mac上开机自启动方法
-1">
-<meta property="og:updated_time" content="2017-03-19T12:04:30.000Z">
+
+视图命名
+ViewController 不要采用VC这样的缩写，统一简化为Controller
+UIView 级别的组件不要以 Controller 或 Displ">
+<meta property="og:updated_time" content="2017-03-22T06:17:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS自动化集成">
-<meta name="twitter:description" content="iOS自动化集成1.安装环境1.1 环境说明
-
-搭建机器：Mac mini
-开发工具：XCode v8.2.1
-Mac系统： OS X 10.12.5
-jenkins版：2.46
-sonarqube : 6.2
-fastlane : 2.9.1
-oclint : 0.11.1
+<meta name="twitter:title" content="iOS代码规范">
+<meta name="twitter:description" content="iOS 开发规范命名规范统一要求
+尽量使用英文命名，同一个含义的不出现多个不同的单词
+命名才用驼峰命名法
+类名采用大驼峰（UpperCamelCase）类成员、方法小驼峰（lowerCamelCase）局部变量大小写首选小驼峰 
 
 
-1.2 安装jenkins 通过brew安装
-1brew install jenkins
- Mac上开机自启动方法
-1">
+
+视图命名
+ViewController 不要采用VC这样的缩写，统一简化为Controller
+UIView 级别的组件不要以 Controller 或 Displ">
 
 
 
@@ -166,13 +151,13 @@ oclint : 0.11.1
 
 
 
-  <link rel="canonical" href="https://toss156.github.io/2017/03/14/iOS持续集成/"/>
+  <link rel="canonical" href="https://toss156.github.io/2017/02/20/iOS代码规范/"/>
 
 
 
 
 
-  <title> iOS自动化集成 | Feng's Notes </title>
+  <title> iOS代码规范 | Feng's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -301,7 +286,7 @@ oclint : 0.11.1
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2017/03/14/iOS持续集成/">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2017/02/20/iOS代码规范/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
@@ -322,7 +307,7 @@ oclint : 0.11.1
             
             
               
-                iOS自动化集成
+                iOS代码规范
               
             
           </h2>
@@ -337,8 +322,8 @@ oclint : 0.11.1
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T23:28:43+08:00">
-                2017-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-20T14:15:10+08:00">
+                2017-02-20
               </time>
             
 
@@ -378,8 +363,8 @@ oclint : 0.11.1
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/14/iOS持续集成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/iOS持续集成/" itemprop="commentCount"></span>
+                <a href="/2017/02/20/iOS代码规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/iOS代码规范/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -387,7 +372,7 @@ oclint : 0.11.1
 
           
           
-             <span id="/2017/03/14/iOS持续集成/" class="leancloud_visitors" data-flag-title="iOS自动化集成">
+             <span id="/2017/02/20/iOS代码规范/" class="leancloud_visitors" data-flag-title="iOS代码规范">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,42 +401,79 @@ oclint : 0.11.1
       
 
       
-        <h1 id="iOS自动化集成"><a href="#iOS自动化集成" class="headerlink" title="iOS自动化集成"></a>iOS自动化集成</h1><h2 id="1-安装环境"><a href="#1-安装环境" class="headerlink" title="1.安装环境"></a>1.安装环境</h2><h3 id="1-1-环境说明"><a href="#1-1-环境说明" class="headerlink" title="1.1 环境说明"></a>1.1 环境说明</h3><blockquote>
-<ul>
-<li>搭建机器：Mac mini</li>
-<li>开发工具：XCode v8.2.1</li>
-<li>Mac系统： OS X 10.12.5</li>
-<li>jenkins版：2.46</li>
-<li>sonarqube : 6.2</li>
-<li>fastlane : 2.9.1</li>
-<li>oclint : 0.11.1</li>
-</ul>
+        <h1 id="iOS-开发规范"><a href="#iOS-开发规范" class="headerlink" title="iOS 开发规范"></a>iOS 开发规范</h1><h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><h3 id="统一要求"><a href="#统一要求" class="headerlink" title="统一要求"></a>统一要求</h3><ul>
+<li>尽量使用英文命名，同一个含义的不出现多个不同的单词</li>
+<li>命名才用驼峰命名法<blockquote>
+<p>类名采用大驼峰（UpperCamelCase）<br>类成员、方法小驼峰（lowerCamelCase）<br>局部变量大小写首选小驼峰 </p>
 </blockquote>
-<h3 id="1-2-安装jenkins"><a href="#1-2-安装jenkins" class="headerlink" title="1.2 安装jenkins"></a>1.2 安装jenkins</h3><p> 通过brew安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install jenkins</div></pre></td></tr></table></figure>
-<p> Mac上开机自启动方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 设置开机自启动配置文件</div><div class="line">ln -sfv /usr/local/opt/jenkins/*.plist ~/Library/LaunchAgents</div><div class="line"># 载入配置文件</div><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist</div><div class="line"># jenkins服务的启动|停止</div><div class="line">brew services [start|stop] jenkins</div></pre></td></tr></table></figure>
-<h3 id="1-2-安装fastlane"><a href="#1-2-安装fastlane" class="headerlink" title="1.2 安装fastlane"></a>1.2 安装fastlane</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># rubychina的 fastlane 上面的落后好几个版本，所以这里我们先把rubygems的源加回来</div><div class="line">gem source -a https://rubygems.org/</div><div class="line">gem install fastlane</div></pre></td></tr></table></figure>
-<h3 id="1-3-安装oclint"><a href="#1-3-安装oclint" class="headerlink" title="1.3 安装oclint"></a>1.3 安装oclint</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 不走下面的命令直接install oclint的话, 下载的版本不是最新版, 文档将不能正常生成</div><div class="line">brew tap oclint/formulae</div><div class="line">brew install oclint</div></pre></td></tr></table></figure>
-<p>直接写在可能很慢，也可以通过迅雷等工具下载完以后，讲zip包放到brew cache 目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 查看brew cache目录</div><div class="line">brew --cache</div><div class="line"># 拷贝oclint-0.11.1.tar.gz 到目录以后，执行可以马上安装</div><div class="line">brew install oclint</div></pre></td></tr></table></figure>
-<h3 id="1-4-安装sonar"><a href="#1-4-安装sonar" class="headerlink" title="1.4 安装sonar"></a>1.4 安装sonar</h3><p>网上很多通过源码zip安装的方法，这里我们也通过brew 来安装</p>
-<h4 id="1-4-1-通过brew安装"><a href="#1-4-1-通过brew安装" class="headerlink" title="1.4.1 通过brew安装"></a>1.4.1 通过brew安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-2-设置数据库用户"><a href="#1-4-2-设置数据库用户" class="headerlink" title="1.4.2 设置数据库用户"></a>1.4.2 设置数据库用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;</div><div class="line">CREATE USER &apos;sonar&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;%&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
-<h4 id="1-4-3-修改-conf-sonar-properties"><a href="#1-4-3-修改-conf-sonar-properties" class="headerlink" title="1.4.3 修改 /conf/sonar.properties"></a>1.4.3 修改 /conf/sonar.properties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sonar.jdbc.username=sonar</div><div class="line">sonar.jdbc.password=sonar</div><div class="line"># 这里原来是localhost的，无法连接，改成127.0.0.1以后连接成功</div><div class="line">sonar.jdbc.url=jdbc:mysql://127.0.0.1:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</div></pre></td></tr></table></figure>
-<h4 id="1-4-5-sonar汉化"><a href="#1-4-5-sonar汉化" class="headerlink" title="1.4.5 sonar汉化"></a>1.4.5 sonar汉化</h4><p><a href="https://github.com/SonarQubeCommunity/sonar-l10n-zh" target="_blank" rel="external">汉化包下载地址</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 下载 sonar-l10n-zh-plugin-1.14.jar</div><div class="line"># 下载后放到 /usr/local/Cellar/sonarqube/6.2/libexec/extensions/plugins 路径下，重启sonar即可</div><div class="line"></div><div class="line">brew services restart sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-6-Objective-C插件下载"><a href="#1-4-6-Objective-C插件下载" class="headerlink" title="1.4.6 Objective-C插件下载"></a>1.4.6 Objective-C插件下载</h4><p><a href="https://github.com/ChenTF/iOS-sonarShell" target="_blank" rel="external">Objective-C插件</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 下载 sonar-objective-c-plugin-0.5.0-SNAPSHOT.jar</div><div class="line"># 放到 /usr/local/Cellar/sonarqube/6.2/libexec/extensions/plugins 路径下，重启sonar即可</div><div class="line">brew services restart sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-7-安装-sonar-scanner"><a href="#1-4-7-安装-sonar-scanner" class="headerlink" title="1.4.7 安装 sonar-scanner"></a>1.4.7 安装 sonar-scanner</h4><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">jdk8下载</a></p>
-<p>网上的教程里面只有 <strong>sonar-runner</strong>，但是官方那边只有<strong>sonar-scanner</strong> 可以下载，看了配置信息，应该是2.4版本以后改名了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 注意：sonar-scanner 需要 jre 1.8以上版本，也可以直接下载jdk </div><div class="line">brew install sonar-scanner</div></pre></td></tr></table></figure>
-<p>配置sonar-scanner </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 配置信息文件, 配置和sonarqube相同即可</div><div class="line">/usr/local/Cellar/sonar-scanner/2.8/libexec/conf/sonar-scanner.properties</div></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li>基于Sonar的iOS代码质量检测系统-(WillkYang) : <a href="http://www.jianshu.com/p/6b61783b9a38" target="_blank" rel="external">http://www.jianshu.com/p/6b61783b9a38</a></li>
-<li>[实践]iOS Sonar集成流程详解-(advancer_chen) : <a href="https://my.oschina.net/ChenTF/blog/708646" target="_blank" rel="external">https://my.oschina.net/ChenTF/blog/708646</a></li>
+</li>
 </ul>
+<h3 id="视图命名"><a href="#视图命名" class="headerlink" title="视图命名"></a>视图命名</h3><ul>
+<li>ViewController 不要采用VC这样的缩写，统一简化为Controller</li>
+<li>UIView 级别的组件不要以 Controller 或 Displayer 结尾，如果起到管理作用可以使用 control 结尾</li>
+<li>大模块中的View 带上模块缩写 例如: MeiPai -&gt; MPXXXView</li>
+</ul>
+<h3 id="协议命名"><a href="#协议命名" class="headerlink" title="协议命名"></a>协议命名</h3><ul>
+<li>好的协议名应能立刻让人分辨出这不是一个类名，除了以常用的 Delegate、DateSource 做结尾外</li>
+</ul>
+<h3 id="通知命名"><a href="#通知命名" class="headerlink" title="通知命名"></a>通知命名</h3><p>基本命名格式是：[与通知相关的类名] + [Did | Will] + [UniquePartOfName] + Notification</p>
+<blockquote>
+<p>NSApplicationDidBecomeActiveNotification<br>NSWindowDidMiniaturizeNotification<br>NSTextViewDidChangeSelectionNotification</p>
+</blockquote>
+<h3 id="临时变量命名"><a href="#临时变量命名" class="headerlink" title="临时变量命名"></a>临时变量命名</h3><ul>
+<li>临时变量可以写得很短，如 i、k、vc 这样；</li>
+<li>临时变量可以使用匈牙利前缀，但数据类型不可以作为前缀：<blockquote>
+<p>// OK<br>wCell, vcMaster, vToolbar<br>// 糟糕，数据类型作为前缀<br>bool_switchState, floatBoxHeight</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h3><p>可以使用广泛使用的缩写，如 URL、JSON，并且缩写要大写。但像将download简写为dl这种是不可以的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// OK</div><div class="line">URL，JSON， Password,  Animate</div><div class="line">// 糟糕</div><div class="line">Url， json，  psw,   anim</div><div class="line">destinationSelection       </div><div class="line">// OK</div><div class="line">destSel                    </div><div class="line">// 糟糕</div><div class="line">setBackgroundColor:        </div><div class="line">// OK</div><div class="line">setBkgdColor:              </div><div class="line">// 糟糕</div></pre></td></tr></table></figure>
+<h2 id="代码格式"><a href="#代码格式" class="headerlink" title="代码格式"></a>代码格式</h2><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量定义示例：</p>
+<ul>
+<li>常量字符串 <blockquote>
+<p> NSString *const<br>// 头文件<br>extern ushort APIFetchPageSizeDefault;    // 无const，可在外部修改</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><ul>
+<li>采用Objective-C 规范的枚举<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DeviceType) &#123;</div><div class="line">kDeviceTypeiOS,</div><div class="line">kDeviceTypeAndroid,</div><div class="line">kDeviceTypeUnkown</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ul>
+<li>类方法声明在方法类型与返回类型之间要有空格。<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 糟糕</span></div><div class="line">-(<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string; </div><div class="line"><span class="comment">// OK</span></div><div class="line">- (<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string;</div><div class="line"><span class="comment">// 条件判断的括号内侧不应有空格。</span></div><div class="line"></div><div class="line"><span class="comment">// 糟糕</span></div><div class="line"><span class="keyword">if</span> ( a &lt; b ) &#123;</div><div class="line"><span class="comment">// something</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// OK</span></div><div class="line"><span class="keyword">if</span> (a &lt; b) &#123;</div><div class="line"><span class="comment">// something</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 关系运算符（如 &gt;=、!=）和逻辑运算符（如 &amp;&amp;、||）两边要有空格。</span></div><div class="line"></div><div class="line"><span class="comment">// OK</span></div><div class="line">(someValue &gt; <span class="number">100</span>) ? <span class="literal">YES</span> : <span class="literal">NO</span></div><div class="line"></div><div class="line"><span class="comment">// OK</span></div><div class="line">(items)?: @[]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="花括号"><a href="#花括号" class="headerlink" title="花括号"></a>花括号</h3><ul>
+<li>方法开始，if， for 等的花括号不要另起一行<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string &#123;</div><div class="line">↑空格                      ↑空格    ↑空格，花括号不要另起一行</div><div class="line"><span class="keyword">if</span> (xxxx) &#123;</div><div class="line">空格↑      ↑空格，花括号不要另起一行</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">空格↑   ↑空格，花括号不要另起一行</div><div class="line">&#125;    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h4 id="变量注释"><a href="#变量注释" class="headerlink" title="变量注释"></a>变量注释</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 应用ID */</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *appid;</div></pre></td></tr></table></figure>
+<h4 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 设置UI */</span></div><div class="line">- (<span class="keyword">void</span>)setupUI;</div><div class="line"></div><div class="line"><span class="comment">/** </span></div><div class="line">* 设置UI </div><div class="line">* @params animate 是否带动画</div><div class="line">*/</div><div class="line">- (<span class="keyword">void</span>)setupUI:(<span class="built_in">BOOL</span>)animate;</div></pre></td></tr></table></figure>
+<h2 id="文件组织"><a href="#文件组织" class="headerlink" title="文件组织"></a>文件组织</h2><h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><blockquote>
+<p>存放基础配置信息，定义常用开发宏，和变量的地方</p>
+</blockquote>
+<h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><blockquote>
+<p>常用的方法，扩展，类别、帮助类</p>
+</blockquote>
+<h3 id="Datas"><a href="#Datas" class="headerlink" title="Datas"></a>Datas</h3><blockquote>
+<p>统一管理 全局对象、数据存储，数据统计的地方 </p>
+</blockquote>
+<h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><blockquote>
+<p>我们采用集约式的Api请求方式，所有的Api请求都通过调用Network的方法来获取回调。 </p>
+</blockquote>
+<h3 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h3><blockquote>
+<p>Classes 主要业务放置的地方，里面再按照模块划分，模块下面再根据MVC进行分类</p>
+</blockquote>
+<h3 id="SDK"><a href="#SDK" class="headerlink" title="SDK"></a>SDK</h3><blockquote>
+<p>这个目录放第三方的SDK，如UMeng、WeiboSDK、WeixinSDK等等</p>
+</blockquote>
+<h3 id="Vendor"><a href="#Vendor" class="headerlink" title="Vendor"></a>Vendor</h3><blockquote>
+<p>原则上第三方库优先采用 Cocoapods 形式引入。部分不提供Pod接入，或者是需要在第三方库基础上进行修改的，则采用源码方式接入，放置在Vendor目录下面。</p>
+</blockquote>
+<h3 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h3><blockquote>
+<p>声音图片，配置信息等放置在Resources中</p>
+</blockquote>
 
       
     </div>
@@ -480,7 +502,7 @@ oclint : 0.11.1
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://toss156.github.io/2017/03/14/iOS持续集成/" title="iOS自动化集成">https://toss156.github.io/2017/03/14/iOS持续集成/</a>
+      <a href="https://toss156.github.io/2017/02/20/iOS代码规范/" title="iOS代码规范">https://toss156.github.io/2017/02/20/iOS代码规范/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -509,15 +531,15 @@ oclint : 0.11.1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/20/iOS代码规范/" rel="next" title="iOS代码规范">
-                <i class="fa fa-chevron-left"></i> iOS代码规范
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/14/iOS持续集成/" rel="prev" title="iOS自动化集成">
+                iOS自动化集成 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -532,10 +554,10 @@ oclint : 0.11.1
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/03/14/iOS持续集成/"
-     data-title="iOS自动化集成"
+        <div class="ds-share flat" data-thread-key="2017/02/20/iOS代码规范/"
+     data-title="iOS代码规范"
      data-content=""
-     data-url="https://toss156.github.io/2017/03/14/iOS持续集成/">
+     data-url="https://toss156.github.io/2017/02/20/iOS代码规范/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -562,8 +584,8 @@ oclint : 0.11.1
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/14/iOS持续集成/"
-           data-title="iOS自动化集成" data-url="https://toss156.github.io/2017/03/14/iOS持续集成/">
+      <div class="ds-thread" data-thread-key="2017/02/20/iOS代码规范/"
+           data-title="iOS代码规范" data-url="https://toss156.github.io/2017/02/20/iOS代码规范/">
       </div>
     
   </div>
@@ -707,7 +729,7 @@ oclint : 0.11.1
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iOS自动化集成"><span class="nav-text">iOS自动化集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装环境"><span class="nav-text">1.安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-环境说明"><span class="nav-text">1.1 环境说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装jenkins"><span class="nav-text">1.2 安装jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装fastlane"><span class="nav-text">1.2 安装fastlane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-安装oclint"><span class="nav-text">1.3 安装oclint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-安装sonar"><span class="nav-text">1.4 安装sonar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-通过brew安装"><span class="nav-text">1.4.1 通过brew安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-设置数据库用户"><span class="nav-text">1.4.2 设置数据库用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-3-修改-conf-sonar-properties"><span class="nav-text">1.4.3 修改 /conf/sonar.properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-5-sonar汉化"><span class="nav-text">1.4.5 sonar汉化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-6-Objective-C插件下载"><span class="nav-text">1.4.6 Objective-C插件下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-7-安装-sonar-scanner"><span class="nav-text">1.4.7 安装 sonar-scanner</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iOS-开发规范"><span class="nav-text">iOS 开发规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规范"><span class="nav-text">命名规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统一要求"><span class="nav-text">统一要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视图命名"><span class="nav-text">视图命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议命名"><span class="nav-text">协议命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知命名"><span class="nav-text">通知命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#临时变量命名"><span class="nav-text">临时变量命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩写"><span class="nav-text">缩写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码格式"><span class="nav-text">代码格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举"><span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空格"><span class="nav-text">空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#花括号"><span class="nav-text">花括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量注释"><span class="nav-text">变量注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法注释"><span class="nav-text">方法注释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件组织"><span class="nav-text">文件组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Config"><span class="nav-text">Config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common"><span class="nav-text">Common</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Datas"><span class="nav-text">Datas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network"><span class="nav-text">Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Classes"><span class="nav-text">Classes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SDK"><span class="nav-text">SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vendor"><span class="nav-text">Vendor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resources"><span class="nav-text">Resources</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
