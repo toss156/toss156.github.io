@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS开发," />
 
 
 
@@ -87,13 +87,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://toss156.github.io/tags/index.html">
+<meta name="description" content="扩展 FLV 标准支持 H265Adobe 的FLV 标准里面并不支持 H.265(HEVC)。要用 FLV 封装 H.265 数据 ，就需要扩展 FLV 增加 CodecID 来支持 H.265 。
+目前国内CDN厂商扩展的CodecID一般都为12，具体的FLV H265标准信息，可以参考 金山的video_file_format_spec_v10_1
+FFmpeg patch 方法可以参考：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FLV H265直播相关">
+<meta property="og:url" content="https://toss156.github.io/2018/01/10/FLV H265直播相关/index.html">
 <meta property="og:site_name" content="Feng's Notes">
-<meta property="og:updated_time" content="2017-03-19T09:36:59.000Z">
+<meta property="og:description" content="扩展 FLV 标准支持 H265Adobe 的FLV 标准里面并不支持 H.265(HEVC)。要用 FLV 封装 H.265 数据 ，就需要扩展 FLV 增加 CodecID 来支持 H.265 。
+目前国内CDN厂商扩展的CodecID一般都为12，具体的FLV H265标准信息，可以参考 金山的video_file_format_spec_v10_1
+FFmpeg patch 方法可以参考：">
+<meta property="og:updated_time" content="2018-06-22T01:31:34.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="FLV H265直播相关">
+<meta name="twitter:description" content="扩展 FLV 标准支持 H265Adobe 的FLV 标准里面并不支持 H.265(HEVC)。要用 FLV 封装 H.265 数据 ，就需要扩展 FLV 增加 CodecID 来支持 H.265 。
+目前国内CDN厂商扩展的CodecID一般都为12，具体的FLV H265标准信息，可以参考 金山的video_file_format_spec_v10_1
+FFmpeg patch 方法可以参考：">
 
 
 
@@ -121,19 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://toss156.github.io/tags/"/>
+  <link rel="canonical" href="https://toss156.github.io/2018/01/10/FLV H265直播相关/"/>
 
 
 
 
 
-  <title>
-  
-
-  
-    tags | Feng's Notes
-  
-</title>
+  <title> FLV H265直播相关 | Feng's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -158,7 +161,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,25 +256,360 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h2 class="post-title" itemprop="name headline">tags</h2>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/01/10/FLV H265直播相关/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="toss156">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng's Notes">
+    </span>
 
     
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 1 个标签
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                FLV H265直播相关
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T09:21:18+08:00">
+                2018-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/10/FLV H265直播相关/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/10/FLV H265直播相关/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/10/FLV H265直播相关/" class="leancloud_visitors" data-flag-title="FLV H265直播相关">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/iOS开发/" style="font-size: 12px; color: #ccc">iOS开发</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="扩展-FLV-标准支持-H265"><a href="#扩展-FLV-标准支持-H265" class="headerlink" title="扩展 FLV 标准支持 H265"></a>扩展 FLV 标准支持 H265</h2><p>Adobe 的FLV 标准里面并不支持 H.265(HEVC)。<br>要用 FLV 封装 H.265 数据 ，就需要扩展 FLV 增加 CodecID 来支持 H.265 。</p>
+<p>目前国内CDN厂商扩展的CodecID一般都为12，具体的FLV H265标准信息，可以参考 <a href="https://github.com/ksvc/FFmpeg/wiki" target="_blank" rel="external">金山的video_file_format_spec_v10_1</a></p>
+<p>FFmpeg patch 方法可以参考：<a href="https://github.com/ksvc/FFmpeg/wiki/instructions" target="_blank" rel="external">金山云H.265 patch说明</a></p>
+<h2 id="当前主流H265解码方案性能对比"><a href="#当前主流H265解码方案性能对比" class="headerlink" title="当前主流H265解码方案性能对比"></a>当前主流H265解码方案性能对比</h2><ul>
+<li>测试设备: iPhone X, iOS 11.4</li>
+<li>测试视频: raw h265文件, 1280 x 720, 3600帧, 单线程解码</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th></th>
+<th>cost</th>
+<th>fps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ittiam</td>
+<td>CPU</td>
+<td>11313ms</td>
+<td>316.27</td>
+</tr>
+<tr>
+<td>安卓自带hevc解码方案libhevc</td>
+<td>Real</td>
+<td>11.311s</td>
+<td>316.32</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>yyffmpeg</td>
+<td>CPU</td>
+<td>13532ms</td>
+<td>264.32</td>
+</tr>
+<tr>
+<td>yy的h265解码方案</td>
+<td>Real</td>
+<td>13.449s</td>
+<td>265.96</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ffmpeg-3.4</td>
+<td>CPU</td>
+<td>53935ms</td>
+<td>66.32</td>
+</tr>
+<tr>
+<td>未优化版本</td>
+<td>Real</td>
+<td>53.432s</td>
+<td>66.94</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ffmpeg-3.4</td>
+<td>CPU</td>
+<td>13843ms</td>
+<td>258.47</td>
+</tr>
+<tr>
+<td>aarch64 neon优化，idct，qpel，pel等方法</td>
+<td>Real</td>
+<td>13.839s</td>
+<td>258.54</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ksc265</td>
+<td>CPU</td>
+<td>6749ms</td>
+<td>544.19</td>
+</tr>
+<tr>
+<td>金山H265</td>
+<td>Real</td>
+<td>6.239s</td>
+<td>508.94</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>videotoolbox</td>
+<td>CPU</td>
+<td>3749ms</td>
+<td>955.14</td>
+</tr>
+<tr>
+<td>iOS11 硬件解码</td>
+<td>Real</td>
+<td>17.139s</td>
+<td>207.32</td>
+</tr>
+</tbody>
+</table>
+<p><strong>开源方案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ittiam的解码方案解码效率最高</div><div class="line"></div><div class="line">iPhone 硬解需要 iPhone 6s 和 iOS11 以上的设备，cpu使用率很低，但是解码速度并不如一些软解方案快。</div><div class="line"></div><div class="line">ffmpeg里的openhevc没有针对aarm64平台进行优化，解码效率最低</div><div class="line"></div><div class="line">经过优化以后基本与yy的方案效率相近</div></pre></td></tr></table></figure></p>
+<p><strong>商业非开源</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ksc265 金山的解码方案的解码效率最高，sdk需要授权，同时cpu使用率也很高。</div></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://depthlove.github.io/2017/07/01/analyse-h265-flv/" target="_blank" rel="external">Minmin.Sun Blog “分析 H.265 + AAC 的 FLV 文件”</a></li>
+<li><a href="https://github.com/ksvc/FFmpeg/wiki" target="_blank" rel="external">video_file_format_spec_v10_1</a></li>
+<li><a href="https://github.com/JQJoe/HEVCIOSDecoderDemoProj" target="_blank" rel="external">HEVCIOSDecoderDemoProj</a></li>
+<li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2016-January/188138.html" target="_blank" rel="external">[FFmpeg-devel] Add ARM64 NEON optimization for HEVC decoder</a></li>
+<li><a href="http://ffmpeg.org/pipermail/ffmpeg-devel/2017-November/220877.html" target="_blank" rel="external">[FFmpeg-devel] [PATCH] 8-bit hevc decoding optimization on aarch64 with neon</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      toss156
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://toss156.github.io/2018/01/10/FLV H265直播相关/" title="FLV H265直播相关">https://toss156.github.io/2018/01/10/FLV H265直播相关/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/10/ffmpeg/" rel="next" title="FFmpeg 常用命令">
+                <i class="fa fa-chevron-left"></i> FFmpeg 常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2018/01/10/FLV H265直播相关/"
+     data-title="FLV H265直播相关"
+     data-content=""
+     data-url="https://toss156.github.io/2018/01/10/FLV H265直播相关/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
   </div>
 
           
@@ -280,6 +618,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/01/10/FLV H265直播相关/"
+           data-title="FLV H265直播相关" data-url="https://toss156.github.io/2018/01/10/FLV H265直播相关/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -299,8 +645,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg"
@@ -400,6 +755,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展-FLV-标准支持-H265"><span class="nav-text">扩展 FLV 标准支持 H265</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前主流H265解码方案性能对比"><span class="nav-text">当前主流H265解码方案性能对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -512,6 +883,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
