@@ -1,0 +1,967 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS开发," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1. iOS 游戏直播方案简介
+iOS 9 之前可以通过私有框架 CoreSurface.framework 来实现录制屏幕。因为用了私有框架，只能通过企业包的形式安装到用户设备中，这种方法的优点是效率很高，但是无法获取游戏声音，只能通过麦克风录制外放的声音。
+
+iOS 9 以后，苹果去掉了 CoreSurface, 因此，上面的方法彻底失效。iOS 9 发布以后的很长一段时间，都没有办法录屏直播">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReplayKit2 直播">
+<meta property="og:url" content="https://toss156.github.io/2018/11/30/ReplayKit2 直播/index.html">
+<meta property="og:site_name" content="Feng's Notes">
+<meta property="og:description" content="1. iOS 游戏直播方案简介
+iOS 9 之前可以通过私有框架 CoreSurface.framework 来实现录制屏幕。因为用了私有框架，只能通过企业包的形式安装到用户设备中，这种方法的优点是效率很高，但是无法获取游戏声音，只能通过麦克风录制外放的声音。
+
+iOS 9 以后，苹果去掉了 CoreSurface, 因此，上面的方法彻底失效。iOS 9 发布以后的很长一段时间，都没有办法录屏直播">
+<meta property="og:updated_time" content="2018-11-30T08:23:11.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ReplayKit2 直播">
+<meta name="twitter:description" content="1. iOS 游戏直播方案简介
+iOS 9 之前可以通过私有框架 CoreSurface.framework 来实现录制屏幕。因为用了私有框架，只能通过企业包的形式安装到用户设备中，这种方法的优点是效率很高，但是无法获取游戏声音，只能通过麦克风录制外放的声音。
+
+iOS 9 以后，苹果去掉了 CoreSurface, 因此，上面的方法彻底失效。iOS 9 发布以后的很长一段时间，都没有办法录屏直播">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6399138518618080000',
+      author: 'toss156'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://toss156.github.io/2018/11/30/ReplayKit2 直播/"/>
+
+
+
+
+
+  <title> ReplayKit2 直播 | Feng's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Feng's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/11/30/ReplayKit2 直播/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="toss156">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                ReplayKit2 直播
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T16:17:58+08:00">
+                2018-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/30/ReplayKit2 直播/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/30/ReplayKit2 直播/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/30/ReplayKit2 直播/" class="leancloud_visitors" data-flag-title="ReplayKit2 直播">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-iOS-游戏直播方案简介"><a href="#1-iOS-游戏直播方案简介" class="headerlink" title="1. iOS 游戏直播方案简介"></a>1. iOS 游戏直播方案简介</h2><ul>
+<li><p>iOS 9 之前可以通过私有框架 CoreSurface.framework 来实现录制屏幕。因为用了私有框架，只能通过企业包的形式安装到用户设备中，这种方法的优点是效率很高，但是无法获取游戏声音，只能通过麦克风录制外放的声音。</p>
+</li>
+<li><p>iOS 9 以后，苹果去掉了 CoreSurface, 因此，上面的方法彻底失效。iOS 9 发布以后的很长一段时间，都没有办法录屏直播。 后来大家另辟蹊径，通过破解 AirPlay 投屏协议的方式实现，在手机上虚拟一个 AirPlay Server 来接受屏幕镜像， 然后解码后再直播。目前 大部分直播平台都是直接接入第三方 SDK，如乐播, xindawn。 这种方案的缺点是 每次 iOS 系统升级，对应的 Airplay Mirroring协议会更新，破解成本高，技术门槛比较高。</p>
+</li>
+<li><p>iOS 10 中苹果提供 ReplayKit 了，可以在游戏中实现录屏直播，但是需要游戏厂商支持通用性很低。所以基本上各大厂商基本上还是采用 Airplay的模式。</p>
+</li>
+<li><p>iOS 11 苹果增强为ReplayKit2 提供了更通用的桌面级录屏方案，本文接下来会着重介绍这种方案。</p>
+</li>
+</ul>
+<h2 id="2-ReplayKit2-概述"><a href="#2-ReplayKit2-概述" class="headerlink" title="2. ReplayKit2 概述"></a>2. ReplayKit2 概述</h2><p>录屏功能是 iOS 10 新推出的特性，苹果在 iOS 9 的 ReplayKit 保存录屏视频的基础上，增加了视频流实时直播功能，官方介绍见 Go Live with ReplayKit。iOS 11 增强为 ReplayKit2，进一步提升了 Replaykit 的易用性和通用性，并且可以对整个手机实现屏幕录制，而非某些做了支持ReplayKit功能的App，因此录屏推流建议直接使用iOS11的ReplayKit2屏幕录制方式。系统录屏采用的是扩展方式，扩展程序有单独的进程，iOS 系统为了保证系统流畅，给扩展程序的资源相对较少，扩展程序内存占用过大也会被 Kill 掉。</p>
+<h2 id="3-部分关键功能实现"><a href="#3-部分关键功能实现" class="headerlink" title="3. 部分关键功能实现"></a>3. 部分关键功能实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"># 系统回调处理</div><div class="line">- (void)processSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType &#123;</div><div class="line">    KSYRKStreamerKit* kit = [KSYRKStreamerKit sharedInstance];</div><div class="line">    switch (sampleBufferType) &#123;</div><div class="line">    case RPSampleBufferTypeVideo: &#123;</div><div class="line">        CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);</div><div class="line">        pixelBuffer = [kit resizeAndRotatePixelBuffer:pixelBuffer];</div><div class="line">        CMTime pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer);</div><div class="line">        if (sampleBuffer) &#123;</div><div class="line">            [kit.streamerBase processVideoPixelBuffer:pixelBuffer timeInfo:pts];</div><div class="line">            _tempVideoPts = pts;</div><div class="line">            _tempVideoPixelBuffer = pixelBuffer;</div><div class="line">            _tempVideoTimeStamp = [[NSDate date] timeIntervalSince1970];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    break;</div><div class="line">    case RPSampleBufferTypeAudioApp:</div><div class="line">        [kit mixAudio:sampleBuffer to:kit.appTrack];</div><div class="line">    break;</div><div class="line">    case RPSampleBufferTypeAudioMic:</div><div class="line">        [kit mixAudio:sampleBuffer to:kit.micTrack];</div><div class="line">        kit.streamerBase.bWithAudio = YES;</div><div class="line">        self.hasMicVoice = YES;</div><div class="line">        break;</div><div class="line">        default:</div><div class="line">    break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-部分已知问题及解决方案"><a href="#4-部分已知问题及解决方案" class="headerlink" title="4. 部分已知问题及解决方案"></a>4. 部分已知问题及解决方案</h2><h3 id="4-1-屏幕帧方向"><a href="#4-1-屏幕帧方向" class="headerlink" title="4.1 屏幕帧方向"></a>4.1 屏幕帧方向</h3><p>系统回调回来的视频帧都是竖屏的全尺寸图像，我们需要对其进行处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">- (CVPixelBufferRef)resizeAndRotatePixelBuffer:(CVPixelBufferRef)sourcePixelBuffer &#123;</div><div class="line">CIImage *outputImage;</div><div class="line">    if (self.privacyMode) &#123;</div><div class="line">        outputImage = self.privacyImage;</div><div class="line">    &#125; else &#123;</div><div class="line">        CIImage *sourceImage = [CIImage imageWithCVPixelBuffer:sourcePixelBuffer];</div><div class="line">        sourceImage = [sourceImage imageByApplyingOrientation:cvMobileRotate];</div><div class="line">        CGFloat outputWidth  = self.videoSize.width;</div><div class="line">        CGFloat outputHeight = self.videoSize.height;</div><div class="line">        CGFloat inputWidth = sourceImage.extent.size.width;</div><div class="line">        CGFloat inputHeight = sourceImage.extent.size.height;</div><div class="line">        //    float scale = MIN(outputWidth/inputWidth, outputHeight/inputHeight);</div><div class="line">        CGAffineTransform tranfrom = CGAffineTransformMakeScale(outputWidth/inputWidth, outputHeight/inputHeight);</div><div class="line">        outputImage = [sourceImage imageByApplyingTransform:tranfrom];</div><div class="line">    &#125;</div><div class="line">    if (!outputPixelBuffer) &#123;</div><div class="line">        //推流</div><div class="line">        NSDictionary* pixelBufferOptions = @&#123;</div><div class="line">            (NSString*) kCVPixelBufferWidthKey : @(self.videoSize.width),</div><div class="line">            (NSString*) kCVPixelBufferHeightKey : @(self.videoSize.height),</div><div class="line">            (NSString*) kCVPixelBufferOpenGLESCompatibilityKey : @YES,</div><div class="line">            (NSString*) kCVPixelBufferIOSurfacePropertiesKey : @&#123;&#125;</div><div class="line">        &#125;;</div><div class="line">        CVReturn ret = CVPixelBufferCreate(kCFAllocatorDefault, self.videoSize.width, self.videoSize.height, kCVPixelFormatType_32BGRA, (__bridge CFDictionaryRef)pixelBufferOptions, &amp;outputPixelBuffer);</div><div class="line"></div><div class="line">        if (ret!= noErr) &#123;</div><div class="line">            NSLog(@&quot;创建streamer buffer失败&quot;);</div><div class="line">            outputPixelBuffer = nil;</div><div class="line">            return outputPixelBuffer;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if (cicontext) &#123;</div><div class="line">        [cicontext render:outputImage toCVPixelBuffer:outputPixelBuffer bounds:outputImage.extent colorSpace:CGColorSpaceCreateDeviceRGB()];</div><div class="line">    &#125;</div><div class="line">    return outputPixelBuffer;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-2-隐私模式的实现"><a href="#4-2-隐私模式的实现" class="headerlink" title="4.2 隐私模式的实现"></a>4.2 隐私模式的实现</h3><p>在直播过程中比如要切换到QQ，或者输入密码等操作，不方便给观众看到，就需要用到隐私模式，用一张或多张图片来代替屏幕截屏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># UIImage 图片转成 CIImage 然后可以调整大小和方向，直接通过 CIContext 渲染到 CVPixelBufferRef 中</div><div class="line">UIImage *privacyImage = [UIImage imageNamed:privacyImageName];</div><div class="line">CIImage *sourceImage = [[CIImage alloc] initWithImage:privacyImage];</div></pre></td></tr></table></figure>
+<h3 id="4-3-某些情况下视频帧不回调"><a href="#4-3-某些情况下视频帧不回调" class="headerlink" title="4.3 某些情况下视频帧不回调"></a>4.3 某些情况下视频帧不回调</h3><p>缓存上一个视频帧，根据推流的fps适当的补帧</p>
+<h3 id="4-4-弹幕和礼物信息的显示"><a href="#4-4-弹幕和礼物信息的显示" class="headerlink" title="4.4 弹幕和礼物信息的显示"></a>4.4 弹幕和礼物信息的显示</h3><p>弹幕和礼物信息的显示有两种方案：</p>
+<p>1、是在主 App 中，建立 Socket 连接，收到消息后，创建本地通知，显示礼物和弹幕，大部分直播应用采用这种方式比较多，对原来弹幕系统的改造比较小。</p>
+<p>2、类似企鹅电竞的做法，通过Apns 远程推送通知的方式，实现弹幕礼物通知。</p>
+<h3 id="4-5-后台保活"><a href="#4-5-后台保活" class="headerlink" title="4.5 后台保活"></a>4.5 后台保活</h3><p>采用第一种弹幕就涉及到主App的后台保活问题：</p>
+<p>常用的几种后台保活方式：VOIP，后台定位，播放空白声音。</p>
+<p>考虑到耗电和上线审核的问题，我们目前采用的是利用background task 播放空白声音。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># 创建 background task</div><div class="line">self.taskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^&#123;</div><div class="line">    [[UIApplication sharedApplication] endBackgroundTask:weakSelf.taskIdentifier];</div><div class="line">    weakSelf.taskIdentifier = UIBackgroundTaskInvalid;</div><div class="line">&#125;];</div><div class="line"></div><div class="line"># 播放背景音乐</div><div class="line">self.taskTimer = [NSTimer scheduledTimerWithTimeInterval:20.0f repeats:YES block:^(NSTimer * _Nonnull timer) &#123;</div><div class="line">if ([[UIApplication sharedApplication] backgroundTimeRemaining] &lt; 61.f) &#123;</div><div class="line">    //创建播放器</div><div class="line">    AVAudioSession *session = [AVAudioSession sharedInstance];</div><div class="line">    [session setActive:YES error:nil];</div><div class="line">    [session setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];</div><div class="line">    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:weakSelf.musicUrl error:nil];</div><div class="line">    [audioPlayer prepareToPlay];</div><div class="line">    [audioPlayer play];</div><div class="line">    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];</div><div class="line">&#125;</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h3 id="4-6-部分游戏无声音"><a href="#4-6-部分游戏无声音" class="headerlink" title="4.6 部分游戏无声音"></a>4.6 部分游戏无声音</h3><p>腾讯系的游戏，例如王者荣耀，刺激战场，在 先开游戏，再开直播的情况下，会出现主播无法听到游戏声音的问题。</p>
+<p>原因是我们利用 AVAudioPlayer 后台保活，我们设置了 AVAudioSession 的 Option 为 AVAudioSessionCategoryOptionMixWithOthers 保证能和其他应用共用扬声器，但是这属性会导致 已经在播放的非Mix的声音被停止。</p>
+<p>解决的方案只能是告知用户，先打开直播，再进入游戏，这样后播放的声音才不会有问题。</p>
+<h3 id="4-7-锁屏后录屏断开"><a href="#4-7-锁屏后录屏断开" class="headerlink" title="4.7 锁屏后录屏断开"></a>4.7 锁屏后录屏断开</h3><p>这个问题没有很好的解决办法，只能在断开以后创建通知告知用户。</p>
+<h2 id="5-参考"><a href="#5-参考" class="headerlink" title="5. 参考"></a>5. 参考</h2><ol>
+<li><a href="https://github.com/tencentyun/qcloud-documents/blob/679bf1db51784f9955c2a8524461c238b4f549fd/product/%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1/%E7%A7%BB%E5%8A%A8%E7%9B%B4%E6%92%AD/iOS%E7%AB%AF%E9%9B%86%E6%88%90/%E6%B8%B8%E6%88%8F%E5%BD%95%E5%B1%8F/%E6%B8%B8%E6%88%8F%E5%BD%95%E5%B1%8F%EF%BC%88ReplayKit%EF%BC%89.md" target="_blank" rel="external">腾讯云文档-游戏录屏（ReplayKit）</a></li>
+<li><a href="http://www.sohu.com/a/220298129_100006755" target="_blank" rel="external">replaykit2 直播踩坑总结</a></li>
+<li><a href="https://www.cnblogs.com/doudouyoutang/p/7574023.html" target="_blank" rel="external">iOS11 ReplayKit2 问题总结</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      toss156
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://toss156.github.io/2018/11/30/ReplayKit2 直播/" title="ReplayKit2 直播">https://toss156.github.io/2018/11/30/ReplayKit2 直播/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/10/FLV H265直播相关/" rel="next" title="FLV H265直播相关">
+                <i class="fa fa-chevron-left"></i> FLV H265直播相关
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2018/11/30/ReplayKit2 直播/"
+     data-title="ReplayKit2 直播"
+     data-content=""
+     data-url="https://toss156.github.io/2018/11/30/ReplayKit2 直播/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/11/30/ReplayKit2 直播/"
+           data-title="ReplayKit2 直播" data-url="https://toss156.github.io/2018/11/30/ReplayKit2 直播/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg"
+               alt="toss156" />
+          <p class="site-author-name" itemprop="name">toss156</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/toss156" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5478084603" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/toss156/answers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/toss156" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-iOS-游戏直播方案简介"><span class="nav-text">1. iOS 游戏直播方案简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ReplayKit2-概述"><span class="nav-text">2. ReplayKit2 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-部分关键功能实现"><span class="nav-text">3. 部分关键功能实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-部分已知问题及解决方案"><span class="nav-text">4. 部分已知问题及解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-屏幕帧方向"><span class="nav-text">4.1 屏幕帧方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-隐私模式的实现"><span class="nav-text">4.2 隐私模式的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-某些情况下视频帧不回调"><span class="nav-text">4.3 某些情况下视频帧不回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-弹幕和礼物信息的显示"><span class="nav-text">4.4 弹幕和礼物信息的显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-后台保活"><span class="nav-text">4.5 后台保活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-部分游戏无声音"><span class="nav-text">4.6 部分游戏无声音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-锁屏后录屏断开"><span class="nav-text">4.7 锁屏后录屏断开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-参考"><span class="nav-text">5. 参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">toss156</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"toss156"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("PxTaF6TQszuSMorNjEg6793O-gzGzoHsz", "pL6S4AgQrcsKHTST4ncKj4FT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
