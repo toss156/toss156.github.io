@@ -1,23 +1,4 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
+<!DOCTYPE html>
 
 
 
@@ -31,47 +12,14 @@
 
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
 
@@ -80,19 +28,55 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Feng's Notes">
-<meta property="og:url" content="https://toss156.github.io/index.html">
-<meta property="og:site_name" content="Feng's Notes">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Feng's Notes">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
 
 
 
@@ -100,14 +84,14 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '6399138518618080000',
-      author: 'toss156'
-    },
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -119,18 +103,35 @@
 </script>
 
 
-
-  <link rel="canonical" href="https://toss156.github.io/"/>
-
+  
 
 
 
 
-  <title> Feng's Notes </title>
-</head>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Feng&#39;s Notes">
+<meta property="og:url" content="https://toss156.github.io/index.html">
+<meta property="og:site_name" content="Feng&#39;s Notes">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Feng&#39;s Notes">
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+
+
+
+
+  <link rel="canonical" href="https://toss156.github.io/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Feng's Notes – 周海锋的个人博客</title>
   
 
 
@@ -143,38 +144,67 @@
 
 
 
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
 
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
 
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-right 
+  page-home">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Feng's Notes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
-        <h1 class="site-subtitle" itemprop="description"></h1>
+        <h1 class="site-subtitle" itemprop="description">周海锋的个人博客</h1>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -182,55 +212,72 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -238,12 +285,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -256,16 +311,22 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/11/30/ReplayKit2 直播/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
 
@@ -275,13 +336,9 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2018/11/30/ReplayKit2 直播/" itemprop="url">
-                  ReplayKit2 直播
-                </a>
+                
+                <a href="/2018/11/30/ReplayKit2 直播/" class="post-title-link" itemprop="https://toss156.github.io/index.html">ReplayKit2 直播</a>
               
             
           </h2>
@@ -289,6 +346,11 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -296,18 +358,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T16:17:58+08:00">
-                2018-11-30
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-30 16:17:58" itemprop="dateCreated datePublished" datetime="2018-11-30T16:17:58+08:00">2018-11-30</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-03 15:38:35" itemprop="dateModified" datetime="2018-12-03T15:38:35+08:00">2018-12-03</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -318,11 +397,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
 
                 
                 
@@ -332,30 +407,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/30/ReplayKit2 直播/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/30/ReplayKit2 直播/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/2018/11/30/ReplayKit2 直播/" class="leancloud_visitors" data-flag-title="ReplayKit2 直播">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -368,7 +422,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -388,10 +444,10 @@
 </li>
 </ul>
 <h2 id="2-ReplayKit2-概述"><a href="#2-ReplayKit2-概述" class="headerlink" title="2. ReplayKit2 概述"></a>2. ReplayKit2 概述</h2><p>录屏功能是 iOS 10 新推出的特性，苹果在 iOS 9 的 ReplayKit 保存录屏视频的基础上，增加了视频流实时直播功能，官方介绍见 Go Live with ReplayKit。iOS 11 增强为 ReplayKit2，进一步提升了 Replaykit 的易用性和通用性，并且可以对整个手机实现屏幕录制，而非某些做了支持ReplayKit功能的App，因此录屏推流建议直接使用iOS11的ReplayKit2屏幕录制方式。系统录屏采用的是扩展方式，扩展程序有单独的进程，iOS 系统为了保证系统流畅，给扩展程序的资源相对较少，扩展程序内存占用过大也会被 Kill 掉。</p>
-<h2 id="3-部分关键功能实现"><a href="#3-部分关键功能实现" class="headerlink" title="3. 部分关键功能实现"></a>3. 部分关键功能实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"># 系统回调处理</div><div class="line">- (void)processSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType &#123;</div><div class="line">    KSYRKStreamerKit* kit = [KSYRKStreamerKit sharedInstance];</div><div class="line">    switch (sampleBufferType) &#123;</div><div class="line">    case RPSampleBufferTypeVideo: &#123;</div><div class="line">        CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);</div><div class="line">        pixelBuffer = [kit resizeAndRotatePixelBuffer:pixelBuffer];</div><div class="line">        CMTime pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer);</div><div class="line">        if (sampleBuffer) &#123;</div><div class="line">            [kit.streamerBase processVideoPixelBuffer:pixelBuffer timeInfo:pts];</div><div class="line">            _tempVideoPts = pts;</div><div class="line">            _tempVideoPixelBuffer = pixelBuffer;</div><div class="line">            _tempVideoTimeStamp = [[NSDate date] timeIntervalSince1970];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    break;</div><div class="line">    case RPSampleBufferTypeAudioApp:</div><div class="line">        [kit mixAudio:sampleBuffer to:kit.appTrack];</div><div class="line">    break;</div><div class="line">    case RPSampleBufferTypeAudioMic:</div><div class="line">        [kit mixAudio:sampleBuffer to:kit.micTrack];</div><div class="line">        kit.streamerBase.bWithAudio = YES;</div><div class="line">        self.hasMicVoice = YES;</div><div class="line">        break;</div><div class="line">        default:</div><div class="line">    break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="4-部分已知问题及解决方案"><a href="#4-部分已知问题及解决方案" class="headerlink" title="4. 部分已知问题及解决方案"></a>4. 部分已知问题及解决方案</h2><h3 id="4-1-屏幕帧方向"><a href="#4-1-屏幕帧方向" class="headerlink" title="4.1 屏幕帧方向"></a>4.1 屏幕帧方向</h3><p>系统回调回来的视频帧都是竖屏的全尺寸图像，我们需要对其进行处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">- (CVPixelBufferRef)resizeAndRotatePixelBuffer:(CVPixelBufferRef)sourcePixelBuffer &#123;</div><div class="line">CIImage *outputImage;</div><div class="line">    if (self.privacyMode) &#123;</div><div class="line">        outputImage = self.privacyImage;</div><div class="line">    &#125; else &#123;</div><div class="line">        CIImage *sourceImage = [CIImage imageWithCVPixelBuffer:sourcePixelBuffer];</div><div class="line">        sourceImage = [sourceImage imageByApplyingOrientation:cvMobileRotate];</div><div class="line">        CGFloat outputWidth  = self.videoSize.width;</div><div class="line">        CGFloat outputHeight = self.videoSize.height;</div><div class="line">        CGFloat inputWidth = sourceImage.extent.size.width;</div><div class="line">        CGFloat inputHeight = sourceImage.extent.size.height;</div><div class="line">        //    float scale = MIN(outputWidth/inputWidth, outputHeight/inputHeight);</div><div class="line">        CGAffineTransform tranfrom = CGAffineTransformMakeScale(outputWidth/inputWidth, outputHeight/inputHeight);</div><div class="line">        outputImage = [sourceImage imageByApplyingTransform:tranfrom];</div><div class="line">    &#125;</div><div class="line">    if (!outputPixelBuffer) &#123;</div><div class="line">        //推流</div><div class="line">        NSDictionary* pixelBufferOptions = @&#123;</div><div class="line">            (NSString*) kCVPixelBufferWidthKey : @(self.videoSize.width),</div><div class="line">            (NSString*) kCVPixelBufferHeightKey : @(self.videoSize.height),</div><div class="line">            (NSString*) kCVPixelBufferOpenGLESCompatibilityKey : @YES,</div><div class="line">            (NSString*) kCVPixelBufferIOSurfacePropertiesKey : @&#123;&#125;</div><div class="line">        &#125;;</div><div class="line">        CVReturn ret = CVPixelBufferCreate(kCFAllocatorDefault, self.videoSize.width, self.videoSize.height, kCVPixelFormatType_32BGRA, (__bridge CFDictionaryRef)pixelBufferOptions, &amp;outputPixelBuffer);</div><div class="line"></div><div class="line">        if (ret!= noErr) &#123;</div><div class="line">            NSLog(@&quot;创建streamer buffer失败&quot;);</div><div class="line">            outputPixelBuffer = nil;</div><div class="line">            return outputPixelBuffer;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    if (cicontext) &#123;</div><div class="line">        [cicontext render:outputImage toCVPixelBuffer:outputPixelBuffer bounds:outputImage.extent colorSpace:CGColorSpaceCreateDeviceRGB()];</div><div class="line">    &#125;</div><div class="line">    return outputPixelBuffer;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="3-部分关键功能实现"><a href="#3-部分关键功能实现" class="headerlink" title="3. 部分关键功能实现"></a>3. 部分关键功能实现</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 系统回调处理</span></span><br><span class="line">- (<span class="keyword">void</span>)processSampleBuffer:(<span class="built_in">CMSampleBufferRef</span>)sampleBuffer withType:(RPSampleBufferType)sampleBufferType &#123;</span><br><span class="line">    KSYRKStreamerKit* kit = [KSYRKStreamerKit sharedInstance];</span><br><span class="line">    <span class="keyword">switch</span> (sampleBufferType) &#123;</span><br><span class="line">    <span class="keyword">case</span> RPSampleBufferTypeVideo: &#123;</span><br><span class="line">        CVPixelBufferRef pixelBuffer = <span class="built_in">CMSampleBufferGetImageBuffer</span>(sampleBuffer);</span><br><span class="line">        pixelBuffer = [kit resizeAndRotatePixelBuffer:pixelBuffer];</span><br><span class="line">        <span class="built_in">CMTime</span> pts = <span class="built_in">CMSampleBufferGetPresentationTimeStamp</span>(sampleBuffer);</span><br><span class="line">        <span class="keyword">if</span> (sampleBuffer) &#123;</span><br><span class="line">            [kit.streamerBase processVideoPixelBuffer:pixelBuffer timeInfo:pts];</span><br><span class="line">            _tempVideoPts = pts;</span><br><span class="line">            _tempVideoPixelBuffer = pixelBuffer;</span><br><span class="line">            _tempVideoTimeStamp = [[<span class="built_in">NSDate</span> date] timeIntervalSince1970];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> RPSampleBufferTypeAudioApp:</span><br><span class="line">        [kit mixAudio:sampleBuffer to:kit.appTrack];</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> RPSampleBufferTypeAudioMic:</span><br><span class="line">        [kit mixAudio:sampleBuffer to:kit.micTrack];</span><br><span class="line">        kit.streamerBase.bWithAudio = <span class="literal">YES</span>;</span><br><span class="line">        <span class="keyword">self</span>.hasMicVoice = <span class="literal">YES</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-部分已知问题及解决方案"><a href="#4-部分已知问题及解决方案" class="headerlink" title="4. 部分已知问题及解决方案"></a>4. 部分已知问题及解决方案</h2><h3 id="4-1-屏幕帧方向"><a href="#4-1-屏幕帧方向" class="headerlink" title="4.1 屏幕帧方向"></a>4.1 屏幕帧方向</h3><p>系统回调回来的视频帧都是竖屏的全尺寸图像，我们需要对其进行处理<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">- (CVPixelBufferRef)resizeAndRotatePixelBuffer:(CVPixelBufferRef)sourcePixelBuffer &#123;</span><br><span class="line">    <span class="built_in">CIImage</span> *outputImage;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.privacyMode) &#123;</span><br><span class="line">        outputImage = <span class="keyword">self</span>.privacyImage;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//11.1以上支持自动旋转</span></span><br><span class="line">        <span class="meta">#ifdef __IPHONE_11_1</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">UIDevice</span>.currentDevice.systemVersion.floatValue &gt; <span class="number">11.1</span>) &#123;</span><br><span class="line">            <span class="built_in">CGImagePropertyOrientation</span> oritation = ((__bridge <span class="built_in">NSNumber</span>*)<span class="built_in">CMGetAttachment</span>(sampleBuffer, (__bridge <span class="built_in">CFStringRef</span>)RPVideoSampleOrientationKey , <span class="literal">NULL</span>)).unsignedIntValue;</span><br><span class="line">            <span class="keyword">if</span> (oritation != <span class="keyword">self</span>.lastOritation) &#123;</span><br><span class="line">                <span class="keyword">self</span>.lastOritation = oritation;</span><br><span class="line">                <span class="keyword">if</span> (oritation == kCGImagePropertyOrientationLeft) &#123;</span><br><span class="line">                    [kit setVideoOrientation:<span class="built_in">UIDeviceOrientationLandscapeLeft</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (oritation == kCGImagePropertyOrientationRight) &#123;</span><br><span class="line">                    [kit setVideoOrientation:<span class="built_in">UIDeviceOrientationLandscapeRight</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="meta">#endif</span></span><br><span class="line">        <span class="built_in">CIImage</span> *sourceImage = [<span class="built_in">CIImage</span> imageWithCVPixelBuffer:sourcePixelBuffer];</span><br><span class="line">        sourceImage = [sourceImage imageByApplyingOrientation:cvMobileRotate];</span><br><span class="line">        <span class="built_in">CGFloat</span> outputWidth  = <span class="keyword">self</span>.videoSize.width;</span><br><span class="line">        <span class="built_in">CGFloat</span> outputHeight = <span class="keyword">self</span>.videoSize.height;</span><br><span class="line">        <span class="built_in">CGFloat</span> inputWidth = sourceImage.extent.size.width;</span><br><span class="line">        <span class="built_in">CGFloat</span> inputHeight = sourceImage.extent.size.height;</span><br><span class="line">        <span class="comment">//    float scale = MIN(outputWidth/inputWidth, outputHeight/inputHeight);</span></span><br><span class="line">        <span class="built_in">CGAffineTransform</span> tranfrom = <span class="built_in">CGAffineTransformMakeScale</span>(outputWidth/inputWidth, outputHeight/inputHeight);</span><br><span class="line">        outputImage = [sourceImage imageByApplyingTransform:tranfrom];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!outputPixelBuffer) &#123;</span><br><span class="line">        <span class="comment">//推流</span></span><br><span class="line">        <span class="built_in">NSDictionary</span>* pixelBufferOptions = @&#123;</span><br><span class="line">            (<span class="built_in">NSString</span>*) kCVPixelBufferWidthKey : @(<span class="keyword">self</span>.videoSize.width),</span><br><span class="line">            (<span class="built_in">NSString</span>*) kCVPixelBufferHeightKey : @(<span class="keyword">self</span>.videoSize.height),</span><br><span class="line">            (<span class="built_in">NSString</span>*) kCVPixelBufferOpenGLESCompatibilityKey : @YES,</span><br><span class="line">            (<span class="built_in">NSString</span>*) kCVPixelBufferIOSurfacePropertiesKey : @&#123;&#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        CVReturn ret = CVPixelBufferCreate(kCFAllocatorDefault, <span class="keyword">self</span>.videoSize.width, <span class="keyword">self</span>.videoSize.height, kCVPixelFormatType_32BGRA, (__bridge <span class="built_in">CFDictionaryRef</span>)pixelBufferOptions, &amp;outputPixelBuffer);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (ret!= noErr) &#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"创建streamer buffer失败"</span>);</span><br><span class="line">            outputPixelBuffer = <span class="literal">nil</span>;</span><br><span class="line">            <span class="keyword">return</span> outputPixelBuffer;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cicontext) &#123;</span><br><span class="line">        [cicontext render:outputImage toCVPixelBuffer:outputPixelBuffer bounds:outputImage.extent colorSpace:<span class="built_in">CGColorSpaceCreateDeviceRGB</span>()];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> outputPixelBuffer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="4-2-隐私模式的实现"><a href="#4-2-隐私模式的实现" class="headerlink" title="4.2 隐私模式的实现"></a>4.2 隐私模式的实现</h3><p>在直播过程中比如要切换到QQ，或者输入密码等操作，不方便给观众看到，就需要用到隐私模式，用一张或多张图片来代替屏幕截屏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># UIImage 图片转成 CIImage 然后可以调整大小和方向，直接通过 CIContext 渲染到 CVPixelBufferRef 中</div><div class="line">UIImage *privacyImage = [UIImage imageNamed:privacyImageName];</div><div class="line">CIImage *sourceImage = [[CIImage alloc] initWithImage:privacyImage];</div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># UIImage 图片转成 CIImage 然后可以调整大小和方向，直接通过 CIContext 渲染到 CVPixelBufferRef 中</span></span><br><span class="line"><span class="built_in">UIImage</span> *privacyImage = [<span class="built_in">UIImage</span> imageNamed:privacyImageName];</span><br><span class="line"><span class="built_in">CIImage</span> *sourceImage = [[<span class="built_in">CIImage</span> alloc] initWithImage:privacyImage];</span><br></pre></td></tr></table></figure>
 <h3 id="4-3-某些情况下视频帧不回调"><a href="#4-3-某些情况下视频帧不回调" class="headerlink" title="4.3 某些情况下视频帧不回调"></a>4.3 某些情况下视频帧不回调</h3><p>缓存上一个视频帧，根据推流的fps适当的补帧</p>
 <h3 id="4-4-弹幕和礼物信息的显示"><a href="#4-4-弹幕和礼物信息的显示" class="headerlink" title="4.4 弹幕和礼物信息的显示"></a>4.4 弹幕和礼物信息的显示</h3><p>弹幕和礼物信息的显示有两种方案：</p>
 <p>1、是在主 App 中，建立 Socket 连接，收到消息后，创建本地通知，显示礼物和弹幕，大部分直播应用采用这种方式比较多，对原来弹幕系统的改造比较小。</p>
@@ -399,15 +455,15 @@
 <h3 id="4-5-后台保活"><a href="#4-5-后台保活" class="headerlink" title="4.5 后台保活"></a>4.5 后台保活</h3><p>采用第一种弹幕就涉及到主App的后台保活问题：</p>
 <p>常用的几种后台保活方式：VOIP，后台定位，播放空白声音。</p>
 <p>考虑到耗电和上线审核的问题，我们目前采用的是利用background task 播放空白声音。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># 创建 background task</div><div class="line">self.taskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^&#123;</div><div class="line">    [[UIApplication sharedApplication] endBackgroundTask:weakSelf.taskIdentifier];</div><div class="line">    weakSelf.taskIdentifier = UIBackgroundTaskInvalid;</div><div class="line">&#125;];</div><div class="line"></div><div class="line"># 播放背景音乐</div><div class="line">self.taskTimer = [NSTimer scheduledTimerWithTimeInterval:20.0f repeats:YES block:^(NSTimer * _Nonnull timer) &#123;</div><div class="line">if ([[UIApplication sharedApplication] backgroundTimeRemaining] &lt; 61.f) &#123;</div><div class="line">    //创建播放器</div><div class="line">    AVAudioSession *session = [AVAudioSession sharedInstance];</div><div class="line">    [session setActive:YES error:nil];</div><div class="line">    [session setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];</div><div class="line">    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:weakSelf.musicUrl error:nil];</div><div class="line">    [audioPlayer prepareToPlay];</div><div class="line">    [audioPlayer play];</div><div class="line">    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];</div><div class="line">&#125;</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 创建 background task</span></span><br><span class="line"><span class="keyword">self</span>.taskIdentifier = [[<span class="built_in">UIApplication</span> sharedApplication] beginBackgroundTaskWithExpirationHandler:^&#123;</span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] endBackgroundTask:weakSelf.taskIdentifier];</span><br><span class="line">    weakSelf.taskIdentifier = <span class="built_in">UIBackgroundTaskInvalid</span>;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"><span class="meta"># 播放背景音乐</span></span><br><span class="line"><span class="keyword">self</span>.taskTimer = [<span class="built_in">NSTimer</span> scheduledTimerWithTimeInterval:<span class="number">20.0</span>f repeats:<span class="literal">YES</span> block:^(<span class="built_in">NSTimer</span> * _Nonnull timer) &#123;</span><br><span class="line"><span class="keyword">if</span> ([[<span class="built_in">UIApplication</span> sharedApplication] backgroundTimeRemaining] &lt; <span class="number">61.</span>f) &#123;</span><br><span class="line">    <span class="comment">//创建播放器</span></span><br><span class="line">    <span class="built_in">AVAudioSession</span> *session = [<span class="built_in">AVAudioSession</span> sharedInstance];</span><br><span class="line">    [session setActive:<span class="literal">YES</span> error:<span class="literal">nil</span>];</span><br><span class="line">    [session setCategory:<span class="built_in">AVAudioSessionCategoryPlayback</span> withOptions:<span class="built_in">AVAudioSessionCategoryOptionMixWithOthers</span> error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">AVAudioPlayer</span> *audioPlayer = [[<span class="built_in">AVAudioPlayer</span> alloc] initWithContentsOfURL:weakSelf.musicUrl error:<span class="literal">nil</span>];</span><br><span class="line">    [audioPlayer prepareToPlay];</span><br><span class="line">    [audioPlayer play];</span><br><span class="line">    [[<span class="built_in">UIApplication</span> sharedApplication] beginBackgroundTaskWithExpirationHandler:<span class="literal">nil</span>];</span><br><span class="line">&#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
 <h3 id="4-6-部分游戏无声音"><a href="#4-6-部分游戏无声音" class="headerlink" title="4.6 部分游戏无声音"></a>4.6 部分游戏无声音</h3><p>腾讯系的游戏，例如王者荣耀，刺激战场，在 先开游戏，再开直播的情况下，会出现主播无法听到游戏声音的问题。</p>
 <p>原因是我们利用 AVAudioPlayer 后台保活，我们设置了 AVAudioSession 的 Option 为 AVAudioSessionCategoryOptionMixWithOthers 保证能和其他应用共用扬声器，但是这属性会导致 已经在播放的非Mix的声音被停止。</p>
 <p>解决的方案只能是告知用户，先打开直播，再进入游戏，这样后播放的声音才不会有问题。</p>
 <h3 id="4-7-锁屏后录屏断开"><a href="#4-7-锁屏后录屏断开" class="headerlink" title="4.7 锁屏后录屏断开"></a>4.7 锁屏后录屏断开</h3><p>这个问题没有很好的解决办法，只能在断开以后创建通知告知用户。</p>
 <h2 id="5-参考"><a href="#5-参考" class="headerlink" title="5. 参考"></a>5. 参考</h2><ol>
-<li><a href="https://github.com/tencentyun/qcloud-documents/blob/679bf1db51784f9955c2a8524461c238b4f549fd/product/%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1/%E7%A7%BB%E5%8A%A8%E7%9B%B4%E6%92%AD/iOS%E7%AB%AF%E9%9B%86%E6%88%90/%E6%B8%B8%E6%88%8F%E5%BD%95%E5%B1%8F/%E6%B8%B8%E6%88%8F%E5%BD%95%E5%B1%8F%EF%BC%88ReplayKit%EF%BC%89.md" target="_blank" rel="external">腾讯云文档-游戏录屏（ReplayKit）</a></li>
-<li><a href="http://www.sohu.com/a/220298129_100006755" target="_blank" rel="external">replaykit2 直播踩坑总结</a></li>
-<li><a href="https://www.cnblogs.com/doudouyoutang/p/7574023.html" target="_blank" rel="external">iOS11 ReplayKit2 问题总结</a></li>
+<li><a href="https://github.com/tencentyun/qcloud-documents/blob/679bf1db51784f9955c2a8524461c238b4f549fd/product/%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1/%E7%A7%BB%E5%8A%A8%E7%9B%B4%E6%92%AD/iOS%E7%AB%AF%E9%9B%86%E6%88%90/%E6%B8%B8%E6%88%8F%E5%BD%95%E5%B1%8F/%E6%B8%B8%E6%88%8F%E5%BD%95%E5%B1%8F%EF%BC%88ReplayKit%EF%BC%89.md" target="_blank" rel="noopener">腾讯云文档-游戏录屏（ReplayKit）</a></li>
+<li><a href="http://www.sohu.com/a/220298129_100006755" target="_blank" rel="noopener">replaykit2 直播踩坑总结</a></li>
+<li><a href="https://www.cnblogs.com/doudouyoutang/p/7574023.html" target="_blank" rel="noopener">iOS11 ReplayKit2 问题总结</a></li>
 </ol>
 
           
@@ -415,17 +471,20 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
+
+    
+       
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -439,6 +498,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -451,16 +514,22 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/01/10/FLV H265直播相关/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
 
@@ -470,13 +539,9 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2018/01/10/FLV H265直播相关/" itemprop="url">
-                  FLV H265直播相关
-                </a>
+                
+                <a href="/2018/01/10/FLV H265直播相关/" class="post-title-link" itemprop="https://toss156.github.io/index.html">FLV H265直播相关</a>
               
             
           </h2>
@@ -484,6 +549,11 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -491,18 +561,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T09:21:18+08:00">
-                2018-01-10
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-10 09:21:18" itemprop="dateCreated datePublished" datetime="2018-01-10T09:21:18+08:00">2018-01-10</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-22 09:31:34" itemprop="dateModified" datetime="2018-06-22T09:31:34+08:00">2018-06-22</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -513,11 +600,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
 
                 
                 
@@ -527,30 +610,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/10/FLV H265直播相关/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/10/FLV H265直播相关/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/2018/01/10/FLV H265直播相关/" class="leancloud_visitors" data-flag-title="FLV H265直播相关">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -563,7 +625,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -573,8 +637,8 @@
         
           
             <h2 id="扩展-FLV-标准支持-H265"><a href="#扩展-FLV-标准支持-H265" class="headerlink" title="扩展 FLV 标准支持 H265"></a>扩展 FLV 标准支持 H265</h2><p>Adobe 的FLV 标准里面并不支持 H.265(HEVC)。<br>要用 FLV 封装 H.265 数据 ，就需要扩展 FLV 增加 CodecID 来支持 H.265 。</p>
-<p>目前国内CDN厂商扩展的CodecID一般都为12，具体的FLV H265标准信息，可以参考 <a href="https://github.com/ksvc/FFmpeg/wiki" target="_blank" rel="external">金山的video_file_format_spec_v10_1</a></p>
-<p>FFmpeg patch 方法可以参考：<a href="https://github.com/ksvc/FFmpeg/wiki/instructions" target="_blank" rel="external">金山云H.265 patch说明</a></p>
+<p>目前国内CDN厂商扩展的CodecID一般都为12，具体的FLV H265标准信息，可以参考 <a href="https://github.com/ksvc/FFmpeg/wiki" target="_blank" rel="noopener">金山的video_file_format_spec_v10_1</a></p>
+<p>FFmpeg patch 方法可以参考：<a href="https://github.com/ksvc/FFmpeg/wiki/instructions" target="_blank" rel="noopener">金山云H.265 patch说明</a></p>
 <h2 id="当前主流H265解码方案性能对比"><a href="#当前主流H265解码方案性能对比" class="headerlink" title="当前主流H265解码方案性能对比"></a>当前主流H265解码方案性能对比</h2><ul>
 <li>测试设备: iPhone X, iOS 11.4</li>
 <li>测试视频: raw h265文件, 1280 x 720, 3600帧, 单线程解码</li>
@@ -693,14 +757,14 @@
 </tr>
 </tbody>
 </table>
-<p><strong>开源方案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ittiam的解码方案解码效率最高</div><div class="line"></div><div class="line">iPhone 硬解需要 iPhone 6s 和 iOS11 以上的设备，cpu使用率很低，但是解码速度并不如一些软解方案快。</div><div class="line"></div><div class="line">ffmpeg里的openhevc没有针对aarm64平台进行优化，解码效率最低</div><div class="line"></div><div class="line">经过优化以后基本与yy的方案效率相近</div></pre></td></tr></table></figure></p>
-<p><strong>商业非开源</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ksc265 金山的解码方案的解码效率最高，sdk需要授权，同时cpu使用率也很高。</div></pre></td></tr></table></figure></p>
+<p><strong>开源方案</strong><br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ittiam的解码方案解码效率最高</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">iPhone </span>硬解需要 iPhone <span class="number">6</span>s 和 iOS11 以上的设备，cpu使用率很低，但是解码速度并不如一些软解方案快。</span><br><span class="line"></span><br><span class="line"><span class="symbol">ffmpeg</span>里的openhevc没有针对aarm64平台进行优化，解码效率最低</span><br><span class="line"></span><br><span class="line">经过优化以后基本与yy的方案效率相近</span><br></pre></td></tr></table></figure></p>
+<p><strong>商业非开源</strong>：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ksc265</span> 金山的解码方案的解码效率最高，sdk需要授权，同时cpu使用率也很高。</span><br></pre></td></tr></table></figure></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="http://depthlove.github.io/2017/07/01/analyse-h265-flv/" target="_blank" rel="external">Minmin.Sun Blog “分析 H.265 + AAC 的 FLV 文件”</a></li>
-<li><a href="https://github.com/ksvc/FFmpeg/wiki" target="_blank" rel="external">video_file_format_spec_v10_1</a></li>
-<li><a href="https://github.com/JQJoe/HEVCIOSDecoderDemoProj" target="_blank" rel="external">HEVCIOSDecoderDemoProj</a></li>
-<li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2016-January/188138.html" target="_blank" rel="external">[FFmpeg-devel] Add ARM64 NEON optimization for HEVC decoder</a></li>
-<li><a href="http://ffmpeg.org/pipermail/ffmpeg-devel/2017-November/220877.html" target="_blank" rel="external">[FFmpeg-devel] [PATCH] 8-bit hevc decoding optimization on aarch64 with neon</a></li>
+<li><a href="http://depthlove.github.io/2017/07/01/analyse-h265-flv/" target="_blank" rel="noopener">Minmin.Sun Blog “分析 H.265 + AAC 的 FLV 文件”</a></li>
+<li><a href="https://github.com/ksvc/FFmpeg/wiki" target="_blank" rel="noopener">video_file_format_spec_v10_1</a></li>
+<li><a href="https://github.com/JQJoe/HEVCIOSDecoderDemoProj" target="_blank" rel="noopener">HEVCIOSDecoderDemoProj</a></li>
+<li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2016-January/188138.html" target="_blank" rel="noopener">[FFmpeg-devel] Add ARM64 NEON optimization for HEVC decoder</a></li>
+<li><a href="http://ffmpeg.org/pipermail/ffmpeg-devel/2017-November/220877.html" target="_blank" rel="noopener">[FFmpeg-devel] [PATCH] 8-bit hevc decoding optimization on aarch64 with neon</a></li>
 </ol>
 
           
@@ -708,17 +772,20 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
+
+    
+       
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -732,6 +799,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -744,16 +815,22 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/01/10/ffmpeg/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
 
@@ -763,13 +840,9 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2018/01/10/ffmpeg/" itemprop="url">
-                  FFmpeg 常用命令
-                </a>
+                
+                <a href="/2018/01/10/ffmpeg/" class="post-title-link" itemprop="https://toss156.github.io/index.html">FFmpeg 常用命令</a>
               
             
           </h2>
@@ -777,6 +850,11 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -784,18 +862,23 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T09:21:18+08:00">
-                2018-01-10
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-10 09:21:18 / 修改时间：09:23:52" itemprop="dateCreated datePublished" datetime="2018-01-10T09:21:18+08:00">2018-01-10</time>
             
 
             
+              
 
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -806,11 +889,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
 
                 
                 
@@ -820,30 +899,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/10/ffmpeg/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/10/ffmpeg/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/2018/01/10/ffmpeg/" class="leancloud_visitors" data-flag-title="FFmpeg 常用命令">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -856,7 +914,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -865,32 +925,35 @@
       
         
           
-            <h1 id="FFmpeg-常用命令"><a href="#FFmpeg-常用命令" class="headerlink" title="FFmpeg 常用命令"></a>FFmpeg 常用命令</h1><h2 id="1、手动编译FFmpeg"><a href="#1、手动编译FFmpeg" class="headerlink" title="1、手动编译FFmpeg"></a>1、手动编译FFmpeg</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 安装依赖</div><div class="line">brew install automake fdk-aac lame libass libtool libvorbis libvpx opus sdl shtool texi2html theora wget x264 x265 xvid yasm  </div><div class="line"></div><div class="line"># configure</div><div class="line">./configure  --prefix=/usr/local --enable-gpl --enable-nonfree --enable-libass --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-ffplay --enable-libxvid --extra-ldflags=-L/usr/local/lib </div><div class="line"></div><div class="line"># 编译</div><div class="line"> make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<h2 id="2、通过-brew-安装-FFmpeg"><a href="#2、通过-brew-安装-FFmpeg" class="headerlink" title="2、通过 brew 安装 FFmpeg"></a>2、通过 brew 安装 FFmpeg</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Mac 上安装FFmpeg, 包含ffplay和x265支持</div><div class="line">brew install ffmpeg --with-fdk-aac --with-sdl2 --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265 --with-x264</div><div class="line"></div><div class="line"># 如果已经安装，可以通过下面命令重新安装</div><div class="line">brew reinstall ffmpeg --with-xxx</div></pre></td></tr></table></figure>
+            <h1 id="FFmpeg-常用命令"><a href="#FFmpeg-常用命令" class="headerlink" title="FFmpeg 常用命令"></a>FFmpeg 常用命令</h1><h2 id="1、手动编译FFmpeg"><a href="#1、手动编译FFmpeg" class="headerlink" title="1、手动编译FFmpeg"></a>1、手动编译FFmpeg</h2><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 安装依赖</span></span><br><span class="line">brew install automake fdk-aac lame libass libtool libvorbis libvpx opus sdl shtool texi2html theora wget x264 x265 xvid yasm  </span><br><span class="line"></span><br><span class="line"><span class="meta"># configure</span></span><br><span class="line">./configure  --prefix=/usr/<span class="keyword">local</span> --<span class="keyword">enable</span>-gpl --<span class="keyword">enable</span>-nonfree --<span class="keyword">enable</span>-libass --<span class="keyword">enable</span>-libfdk-aac --<span class="keyword">enable</span>-libfreetype --<span class="keyword">enable</span>-libmp3lame --<span class="keyword">enable</span>-libopus --<span class="keyword">enable</span>-libtheora --<span class="keyword">enable</span>-libvorbis --<span class="keyword">enable</span>-libvpx --<span class="keyword">enable</span>-libx264 --<span class="keyword">enable</span>-libx265 --<span class="keyword">enable</span>-ffplay --<span class="keyword">enable</span>-libxvid --extra-ldflags=-L/usr/<span class="keyword">local</span>/<span class="keyword">lib</span> </span><br><span class="line"></span><br><span class="line"><span class="meta"># 编译</span></span><br><span class="line"> <span class="built_in">make</span> &amp;&amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h2 id="2、通过-brew-安装-FFmpeg"><a href="#2、通过-brew-安装-FFmpeg" class="headerlink" title="2、通过 brew 安装 FFmpeg"></a>2、通过 brew 安装 FFmpeg</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Mac 上安装FFmpeg, 包含ffplay和x265支持</span></span><br><span class="line">brew install ffmpeg --<span class="keyword">with</span>-fdk-aac --<span class="keyword">with</span>-sdl2 --<span class="keyword">with</span>-freetype --<span class="keyword">with</span>-libass --<span class="keyword">with</span>-libquvi --<span class="keyword">with</span>-libvorbis --<span class="keyword">with</span>-libvpx --<span class="keyword">with</span>-opus --<span class="keyword">with</span>-x265 --<span class="keyword">with</span>-x264</span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果已经安装，可以通过下面命令重新安装</span></span><br><span class="line">brew reinstall ffmpeg --<span class="keyword">with</span>-xxx</span><br></pre></td></tr></table></figure>
 <h2 id="3、FFmpeg常用命令"><a href="#3、FFmpeg常用命令" class="headerlink" title="3、FFmpeg常用命令"></a>3、FFmpeg常用命令</h2><blockquote>
 <h3 id="H264转H265-命令"><a href="#H264转H265-命令" class="headerlink" title="H264转H265 命令"></a>H264转H265 命令</h3></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i input.file -c:a copy -c:v libx265 output.file</div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -<span class="selector-tag">i</span> <span class="selector-tag">input</span><span class="selector-class">.file</span> -c:<span class="selector-tag">a</span> copy -c:v libx265 output.file</span><br></pre></td></tr></table></figure>
 <blockquote>
 <h3 id="H264-RTMP-Flv流-转-H265-RTMP-Flv"><a href="#H264-RTMP-Flv流-转-H265-RTMP-Flv" class="headerlink" title="H264 RTMP/Flv流 转 H265 RTMP/Flv"></a>H264 RTMP/Flv流 转 H265 RTMP/Flv</h3></blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#支持H265推流的NodeJs服务器</div><div class="line">npm install node-media-server</div><div class="line"></div><div class="line">node run app.js</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 在线流转H265 RTMP流</div><div class="line">ffmpeg -re -i [INPUT] -c:v libx265 -tune zerolatency -c:a copy -f flv rtmp://127.0.0.1:1935/live/h265</div></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#支持H265推流的NodeJs服务器</span></span><br><span class="line">npm install <span class="keyword">node</span><span class="title">-media-server</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">node</span> <span class="title">run</span> app.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在线流转<span class="selector-tag">H265</span> <span class="selector-tag">RTMP</span>流</span><br><span class="line"><span class="selector-tag">ffmpeg</span> <span class="selector-tag">-re</span> <span class="selector-tag">-i</span> <span class="selector-attr">[INPUT]</span> <span class="selector-tag">-c</span><span class="selector-pseudo">:v</span> <span class="selector-tag">libx265</span> <span class="selector-tag">-tune</span> <span class="selector-tag">zerolatency</span> <span class="selector-tag">-c</span><span class="selector-pseudo">:a</span> <span class="selector-tag">copy</span> <span class="selector-tag">-f</span> <span class="selector-tag">flv</span> <span class="selector-tag">rtmp</span>:<span class="comment">//127.0.0.1:1935/live/h265</span></span><br></pre></td></tr></table></figure>
 
           
         
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
+
+    
+       
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -904,6 +967,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -916,16 +983,22 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2017/03/14/iOS持续集成/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
 
@@ -935,13 +1008,9 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/03/14/iOS持续集成/" itemprop="url">
-                  iOS自动化集成
-                </a>
+                
+                <a href="/2017/03/14/iOS持续集成/" class="post-title-link" itemprop="https://toss156.github.io/index.html">iOS自动化集成</a>
               
             
           </h2>
@@ -949,6 +1018,11 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -956,18 +1030,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T23:28:43+08:00">
-                2017-03-14
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-03-14 23:28:43" itemprop="dateCreated datePublished" datetime="2017-03-14T23:28:43+08:00">2017-03-14</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-03-19 20:04:30" itemprop="dateModified" datetime="2017-03-19T20:04:30+08:00">2017-03-19</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -978,11 +1069,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
 
                 
                 
@@ -992,30 +1079,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/14/iOS持续集成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/iOS持续集成/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/2017/03/14/iOS持续集成/" class="leancloud_visitors" data-flag-title="iOS自动化集成">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1028,7 +1094,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1049,29 +1117,29 @@
 </ul>
 </blockquote>
 <h3 id="1-2-安装jenkins"><a href="#1-2-安装jenkins" class="headerlink" title="1.2 安装jenkins"></a>1.2 安装jenkins</h3><p> 通过brew安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install jenkins</div></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span><span class="keyword">jenkins</span></span><br></pre></td></tr></table></figure>
 <p> Mac上开机自启动方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 设置开机自启动配置文件</div><div class="line">ln -sfv /usr/local/opt/jenkins/*.plist ~/Library/LaunchAgents</div><div class="line"># 载入配置文件</div><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist</div><div class="line"># jenkins服务的启动|停止</div><div class="line">brew services [start|stop] jenkins</div></pre></td></tr></table></figure>
-<h3 id="1-2-安装fastlane"><a href="#1-2-安装fastlane" class="headerlink" title="1.2 安装fastlane"></a>1.2 安装fastlane</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># rubychina的 fastlane 上面的落后好几个版本，所以这里我们先把rubygems的源加回来</div><div class="line">gem source -a https://rubygems.org/</div><div class="line">gem install fastlane</div></pre></td></tr></table></figure>
-<h3 id="1-3-安装oclint"><a href="#1-3-安装oclint" class="headerlink" title="1.3 安装oclint"></a>1.3 安装oclint</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 不走下面的命令直接install oclint的话, 下载的版本不是最新版, 文档将不能正常生成</div><div class="line">brew tap oclint/formulae</div><div class="line">brew install oclint</div></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置开机自启动配置文件</span></span><br><span class="line">ln -sfv <span class="string">/usr/local/opt/jenkins/</span>*<span class="string">.plist</span> ~<span class="string">/Library/LaunchAgents</span></span><br><span class="line"><span class="comment"># 载入配置文件</span></span><br><span class="line">launchctl load ~<span class="string">/Library/LaunchAgents/homebrew.mxcl.jenkins.plist</span></span><br><span class="line"><span class="comment"># jenkins服务的启动|停止</span></span><br><span class="line">brew services [start|stop] jenkins</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-安装fastlane"><a href="#1-2-安装fastlane" class="headerlink" title="1.2 安装fastlane"></a>1.2 安装fastlane</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rubychina的 fastlane 上面的落后好几个版本，所以这里我们先把rubygems的源加回来</span></span><br><span class="line">gem source -<span class="keyword">a</span> <span class="keyword">https</span>://rubygems.org/</span><br><span class="line">gem install fastlane</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-安装oclint"><a href="#1-3-安装oclint" class="headerlink" title="1.3 安装oclint"></a>1.3 安装oclint</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 不走下面的命令直接install oclint的话, 下载的版本不是最新版, 文档将不能正常生成</span><br><span class="line"><span class="keyword">brew </span>tap oclint/formulae</span><br><span class="line"><span class="keyword">brew </span>install oclint</span><br></pre></td></tr></table></figure>
 <p>直接写在可能很慢，也可以通过迅雷等工具下载完以后，讲zip包放到brew cache 目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 查看brew cache目录</div><div class="line">brew --cache</div><div class="line"># 拷贝oclint-0.11.1.tar.gz 到目录以后，执行可以马上安装</div><div class="line">brew install oclint</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看brew cache目录</span></span><br><span class="line">brew --cache</span><br><span class="line"><span class="meta">#</span><span class="bash"> 拷贝oclint-0.11.1.tar.gz 到目录以后，执行可以马上安装</span></span><br><span class="line">brew install oclint</span><br></pre></td></tr></table></figure>
 <h3 id="1-4-安装sonar"><a href="#1-4-安装sonar" class="headerlink" title="1.4 安装sonar"></a>1.4 安装sonar</h3><p>网上很多通过源码zip安装的方法，这里我们也通过brew 来安装</p>
-<h4 id="1-4-1-通过brew安装"><a href="#1-4-1-通过brew安装" class="headerlink" title="1.4.1 通过brew安装"></a>1.4.1 通过brew安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-2-设置数据库用户"><a href="#1-4-2-设置数据库用户" class="headerlink" title="1.4.2 设置数据库用户"></a>1.4.2 设置数据库用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;</div><div class="line">CREATE USER &apos;sonar&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;%&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
-<h4 id="1-4-3-修改-conf-sonar-properties"><a href="#1-4-3-修改-conf-sonar-properties" class="headerlink" title="1.4.3 修改 /conf/sonar.properties"></a>1.4.3 修改 /conf/sonar.properties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sonar.jdbc.username=sonar</div><div class="line">sonar.jdbc.password=sonar</div><div class="line"># 这里原来是localhost的，无法连接，改成127.0.0.1以后连接成功</div><div class="line">sonar.jdbc.url=jdbc:mysql://127.0.0.1:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</div></pre></td></tr></table></figure>
-<h4 id="1-4-5-sonar汉化"><a href="#1-4-5-sonar汉化" class="headerlink" title="1.4.5 sonar汉化"></a>1.4.5 sonar汉化</h4><p><a href="https://github.com/SonarQubeCommunity/sonar-l10n-zh" target="_blank" rel="external">汉化包下载地址</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 下载 sonar-l10n-zh-plugin-1.14.jar</div><div class="line"># 下载后放到 /usr/local/Cellar/sonarqube/6.2/libexec/extensions/plugins 路径下，重启sonar即可</div><div class="line"></div><div class="line">brew services restart sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-6-Objective-C插件下载"><a href="#1-4-6-Objective-C插件下载" class="headerlink" title="1.4.6 Objective-C插件下载"></a>1.4.6 Objective-C插件下载</h4><p><a href="https://github.com/ChenTF/iOS-sonarShell" target="_blank" rel="external">Objective-C插件</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 下载 sonar-objective-c-plugin-0.5.0-SNAPSHOT.jar</div><div class="line"># 放到 /usr/local/Cellar/sonarqube/6.2/libexec/extensions/plugins 路径下，重启sonar即可</div><div class="line">brew services restart sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-7-安装-sonar-scanner"><a href="#1-4-7-安装-sonar-scanner" class="headerlink" title="1.4.7 安装 sonar-scanner"></a>1.4.7 安装 sonar-scanner</h4><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">jdk8下载</a></p>
+<h4 id="1-4-1-通过brew安装"><a href="#1-4-1-通过brew安装" class="headerlink" title="1.4.1 通过brew安装"></a>1.4.1 通过brew安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install sonarqube</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-2-设置数据库用户"><a href="#1-4-2-设置数据库用户" class="headerlink" title="1.4.2 设置数据库用户"></a>1.4.2 设置数据库用户</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> sonar <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'sonar'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</span><br><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">ON</span> sonar.* <span class="keyword">TO</span> <span class="string">'sonar'</span>@<span class="string">'%'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</span><br><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">ON</span> sonar.* <span class="keyword">TO</span> <span class="string">'sonar'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-3-修改-conf-sonar-properties"><a href="#1-4-3-修改-conf-sonar-properties" class="headerlink" title="1.4.3 修改 /conf/sonar.properties"></a>1.4.3 修改 /conf/sonar.properties</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sonar.jdbc.<span class="attribute">username</span>=sonar</span><br><span class="line">sonar.jdbc.<span class="attribute">password</span>=sonar</span><br><span class="line"><span class="comment"># 这里原来是localhost的，无法连接，改成127.0.0.1以后连接成功</span></span><br><span class="line">sonar.jdbc.<span class="attribute">url</span>=jdbc:mysql://127.0.0.1:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-5-sonar汉化"><a href="#1-4-5-sonar汉化" class="headerlink" title="1.4.5 sonar汉化"></a>1.4.5 sonar汉化</h4><p><a href="https://github.com/SonarQubeCommunity/sonar-l10n-zh" target="_blank" rel="noopener">汉化包下载地址</a></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 下载 sonar-l10n-zh-plugin-<span class="number">1.14</span>.jar</span><br><span class="line"># 下载后放到 <span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>sonarqube<span class="regexp">/6.2/</span>libexec<span class="regexp">/extensions/</span>plugins 路径下，重启sonar即可</span><br><span class="line"></span><br><span class="line">brew services restart sonarqube</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-6-Objective-C插件下载"><a href="#1-4-6-Objective-C插件下载" class="headerlink" title="1.4.6 Objective-C插件下载"></a>1.4.6 Objective-C插件下载</h4><p><a href="https://github.com/ChenTF/iOS-sonarShell" target="_blank" rel="noopener">Objective-C插件</a></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 下载 sonar-objective-c-plugin-<span class="number">0.5</span>.<span class="number">0</span>-SNAPSHOT.jar</span><br><span class="line"># 放到 <span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>sonarqube<span class="regexp">/6.2/</span>libexec<span class="regexp">/extensions/</span>plugins 路径下，重启sonar即可</span><br><span class="line">brew services restart sonarqube</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-7-安装-sonar-scanner"><a href="#1-4-7-安装-sonar-scanner" class="headerlink" title="1.4.7 安装 sonar-scanner"></a>1.4.7 安装 sonar-scanner</h4><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">jdk8下载</a></p>
 <p>网上的教程里面只有 <strong>sonar-runner</strong>，但是官方那边只有<strong>sonar-scanner</strong> 可以下载，看了配置信息，应该是2.4版本以后改名了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 注意：sonar-scanner 需要 jre 1.8以上版本，也可以直接下载jdk </div><div class="line">brew install sonar-scanner</div></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：sonar-scanner 需要 jre 1.8以上版本，也可以直接下载jdk </span></span><br><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>sonar-<span class="keyword">scanner</span></span><br></pre></td></tr></table></figure>
 <p>配置sonar-scanner </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 配置信息文件, 配置和sonarqube相同即可</div><div class="line">/usr/local/Cellar/sonar-scanner/2.8/libexec/conf/sonar-scanner.properties</div></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置信息文件, 配置和sonarqube相同即可</span></span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>sonar-scanner<span class="regexp">/2.8/</span>libexec<span class="regexp">/conf/</span>sonar-scanner.properties</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li>基于Sonar的iOS代码质量检测系统-(WillkYang) : <a href="http://www.jianshu.com/p/6b61783b9a38" target="_blank" rel="external">http://www.jianshu.com/p/6b61783b9a38</a></li>
-<li>[实践]iOS Sonar集成流程详解-(advancer_chen) : <a href="https://my.oschina.net/ChenTF/blog/708646" target="_blank" rel="external">https://my.oschina.net/ChenTF/blog/708646</a></li>
+<li>基于Sonar的iOS代码质量检测系统-(WillkYang) : <a href="http://www.jianshu.com/p/6b61783b9a38" target="_blank" rel="noopener">http://www.jianshu.com/p/6b61783b9a38</a></li>
+<li>[实践]iOS Sonar集成流程详解-(advancer_chen) : <a href="https://my.oschina.net/ChenTF/blog/708646" target="_blank" rel="noopener">https://my.oschina.net/ChenTF/blog/708646</a></li>
 </ul>
 
           
@@ -1079,17 +1147,20 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
+
+    
+       
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1103,6 +1174,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1115,16 +1190,22 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2017/02/20/iOS代码规范/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
 
@@ -1134,13 +1215,9 @@
         
         
           <h2 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2017/02/20/iOS代码规范/" itemprop="url">
-                  iOS代码规范
-                </a>
+                
+                <a href="/2017/02/20/iOS代码规范/" class="post-title-link" itemprop="https://toss156.github.io/index.html">iOS代码规范</a>
               
             
           </h2>
@@ -1148,6 +1225,11 @@
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1155,18 +1237,35 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-20T14:15:10+08:00">
-                2017-02-20
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-20 14:15:10" itemprop="dateCreated datePublished" datetime="2017-02-20T14:15:10+08:00">2017-02-20</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-03-22 14:17:34" itemprop="dateModified" datetime="2017-03-22T14:17:34+08:00">2017-03-22</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -1177,11 +1276,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
 
                 
                 
@@ -1191,30 +1286,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/20/iOS代码规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/iOS代码规范/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/2017/02/20/iOS代码规范/" class="leancloud_visitors" data-flag-title="iOS代码规范">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1227,7 +1301,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1263,7 +1339,7 @@
 </li>
 </ul>
 <h3 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h3><p>可以使用广泛使用的缩写，如 URL、JSON，并且缩写要大写。但像将download简写为dl这种是不可以的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// OK</div><div class="line">URL，JSON， Password,  Animate</div><div class="line">// 糟糕</div><div class="line">Url， json，  psw,   anim</div><div class="line">destinationSelection       </div><div class="line">// OK</div><div class="line">destSel                    </div><div class="line">// 糟糕</div><div class="line">setBackgroundColor:        </div><div class="line">// OK</div><div class="line">setBkgdColor:              </div><div class="line">// 糟糕</div></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// OK</span></span><br><span class="line">URL，JSON， Password,  Animate</span><br><span class="line"><span class="comment">// 糟糕</span></span><br><span class="line">Url， json，  psw,   anim</span><br><span class="line">destinationSelection       </span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line">destSel                    </span><br><span class="line"><span class="comment">// 糟糕</span></span><br><span class="line"><span class="symbol">setBackgroundColor:</span>        </span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line"><span class="symbol">setBkgdColor:</span>              </span><br><span class="line"><span class="comment">// 糟糕</span></span><br></pre></td></tr></table></figure>
 <h2 id="代码格式"><a href="#代码格式" class="headerlink" title="代码格式"></a>代码格式</h2><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量定义示例：</p>
 <ul>
 <li>常量字符串 <blockquote>
@@ -1272,19 +1348,19 @@
 </li>
 </ul>
 <h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><ul>
-<li>采用Objective-C 规范的枚举<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DeviceType) &#123;</div><div class="line">kDeviceTypeiOS,</div><div class="line">kDeviceTypeAndroid,</div><div class="line">kDeviceTypeUnkown</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>采用Objective-C 规范的枚举<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DeviceType) &#123;</span><br><span class="line">kDeviceTypeiOS,</span><br><span class="line">kDeviceTypeAndroid,</span><br><span class="line">kDeviceTypeUnkown</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ul>
-<li>类方法声明在方法类型与返回类型之间要有空格。<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 糟糕</span></div><div class="line">-(<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string; </div><div class="line"><span class="comment">// OK</span></div><div class="line">- (<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string;</div><div class="line"><span class="comment">// 条件判断的括号内侧不应有空格。</span></div><div class="line"></div><div class="line"><span class="comment">// 糟糕</span></div><div class="line"><span class="keyword">if</span> ( a &lt; b ) &#123;</div><div class="line"><span class="comment">// something</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// OK</span></div><div class="line"><span class="keyword">if</span> (a &lt; b) &#123;</div><div class="line"><span class="comment">// something</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 关系运算符（如 &gt;=、!=）和逻辑运算符（如 &amp;&amp;、||）两边要有空格。</span></div><div class="line"></div><div class="line"><span class="comment">// OK</span></div><div class="line">(someValue &gt; <span class="number">100</span>) ? <span class="literal">YES</span> : <span class="literal">NO</span></div><div class="line"></div><div class="line"><span class="comment">// OK</span></div><div class="line">(items)?: @[]</div></pre></td></tr></table></figure>
+<li>类方法声明在方法类型与返回类型之间要有空格。<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 糟糕</span></span><br><span class="line">-(<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string; </span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line">- (<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string;</span><br><span class="line"><span class="comment">// 条件判断的括号内侧不应有空格。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 糟糕</span></span><br><span class="line"><span class="keyword">if</span> ( a &lt; b ) &#123;</span><br><span class="line"><span class="comment">// something</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line"><span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line"><span class="comment">// something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 关系运算符（如 &gt;=、!=）和逻辑运算符（如 &amp;&amp;、||）两边要有空格。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line">(someValue &gt; <span class="number">100</span>) ? <span class="literal">YES</span> : <span class="literal">NO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// OK</span></span><br><span class="line">(items)?: @[]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="花括号"><a href="#花括号" class="headerlink" title="花括号"></a>花括号</h3><ul>
-<li>方法开始，if， for 等的花括号不要另起一行<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string &#123;</div><div class="line">↑空格                      ↑空格    ↑空格，花括号不要另起一行</div><div class="line"><span class="keyword">if</span> (xxxx) &#123;</div><div class="line">空格↑      ↑空格，花括号不要另起一行</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">空格↑   ↑空格，花括号不要另起一行</div><div class="line">&#125;    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>方法开始，if， for 等的花括号不要另起一行<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)methodName:(<span class="built_in">NSString</span> *)string &#123;</span><br><span class="line">↑空格                      ↑空格    ↑空格，花括号不要另起一行</span><br><span class="line"><span class="keyword">if</span> (xxxx) &#123;</span><br><span class="line">空格↑      ↑空格，花括号不要另起一行</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">空格↑   ↑空格，花括号不要另起一行</span><br><span class="line">&#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h4 id="变量注释"><a href="#变量注释" class="headerlink" title="变量注释"></a>变量注释</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 应用ID */</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *appid;</div></pre></td></tr></table></figure>
-<h4 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 设置UI */</span></div><div class="line">- (<span class="keyword">void</span>)setupUI;</div><div class="line"></div><div class="line"><span class="comment">/** </span></div><div class="line">* 设置UI </div><div class="line">* @params animate 是否带动画</div><div class="line">*/</div><div class="line">- (<span class="keyword">void</span>)setupUI:(<span class="built_in">BOOL</span>)animate;</div></pre></td></tr></table></figure>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><h4 id="变量注释"><a href="#变量注释" class="headerlink" title="变量注释"></a>变量注释</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 应用ID */</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *appid;</span><br></pre></td></tr></table></figure>
+<h4 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 设置UI */</span></span><br><span class="line">- (<span class="keyword">void</span>)setupUI;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">* 设置UI </span></span><br><span class="line"><span class="comment">* @params animate 是否带动画</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">- (<span class="keyword">void</span>)setupUI:(<span class="built_in">BOOL</span>)animate;</span><br></pre></td></tr></table></figure>
 <h2 id="文件组织"><a href="#文件组织" class="headerlink" title="文件组织"></a>文件组织</h2><h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><blockquote>
 <p>存放基础配置信息，定义常用开发宏，和变量的地方</p>
 </blockquote>
@@ -1315,17 +1391,20 @@
       
     </div>
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
+
+    
+       
+    
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1339,6 +1418,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1347,11 +1430,8 @@
 
   
 
-          
+
           </div>
-          
-
-
           
 
         </div>
@@ -1367,119 +1447,113 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg"
-               alt="toss156" />
-          <p class="site-author-name" itemprop="name">toss156</p>
-           
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg" alt="toss156">
+            
+              <p class="site-author-name" itemprop="name">toss156</p>
               <p class="site-description motion-element" itemprop="description"></p>
-           
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/toss156" title="GitHub &rarr; https://github.com/toss156" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:308276366@qq.com" title="E-Mail &rarr; mailto:308276366@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/toss156" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/u/5478084603" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/toss156/answers" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.csdn.net/toss156" target="_blank" title="CSDN">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  CSDN
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
 
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-        </div>
       
 
     </div>
@@ -1492,36 +1566,55 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">toss156</span>
+
+  
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
 
 
         
+
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
     
   </div>
 
@@ -1541,87 +1634,10 @@
 
 
 
-  
 
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"toss156"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-      
-      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
 
@@ -1637,115 +1653,59 @@
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
   
 
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("PxTaF6TQszuSMorNjEg6793O-gzGzoHsz", "pL6S4AgQrcsKHTST4ncKj4FT");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
 
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
 
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
 
 
@@ -1753,6 +1713,24 @@
 
   
 
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

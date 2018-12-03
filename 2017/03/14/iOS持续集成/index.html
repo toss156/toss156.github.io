@@ -1,23 +1,4 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
+<!DOCTYPE html>
 
 
 
@@ -31,47 +12,14 @@
 
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="iOS开发," />
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
 
@@ -80,65 +28,55 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
 
 
 
-<meta name="description" content="iOS自动化集成1.安装环境1.1 环境说明
-
-搭建机器：Mac mini
-开发工具：XCode v8.2.1
-Mac系统： OS X 10.12.5
-jenkins版：2.46
-sonarqube : 6.2
-fastlane : 2.9.1
-oclint : 0.11.1
 
 
-1.2 安装jenkins 通过brew安装
-1brew install jenkins
- Mac上开机自启动方法
-1">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS自动化集成">
-<meta property="og:url" content="https://toss156.github.io/2017/03/14/iOS持续集成/index.html">
-<meta property="og:site_name" content="Feng's Notes">
-<meta property="og:description" content="iOS自动化集成1.安装环境1.1 环境说明
-
-搭建机器：Mac mini
-开发工具：XCode v8.2.1
-Mac系统： OS X 10.12.5
-jenkins版：2.46
-sonarqube : 6.2
-fastlane : 2.9.1
-oclint : 0.11.1
 
 
-1.2 安装jenkins 通过brew安装
-1brew install jenkins
- Mac上开机自启动方法
-1">
-<meta property="og:updated_time" content="2017-03-19T12:04:30.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS自动化集成">
-<meta name="twitter:description" content="iOS自动化集成1.安装环境1.1 环境说明
-
-搭建机器：Mac mini
-开发工具：XCode v8.2.1
-Mac系统： OS X 10.12.5
-jenkins版：2.46
-sonarqube : 6.2
-fastlane : 2.9.1
-oclint : 0.11.1
 
 
-1.2 安装jenkins 通过brew安装
-1brew install jenkins
- Mac上开机自启动方法
-1">
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
 
 
 
@@ -146,14 +84,14 @@ oclint : 0.11.1
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '6399138518618080000',
-      author: 'toss156'
-    },
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -165,18 +103,40 @@ oclint : 0.11.1
 </script>
 
 
-
-  <link rel="canonical" href="https://toss156.github.io/2017/03/14/iOS持续集成/"/>
-
+  
 
 
 
 
-  <title> iOS自动化集成 | Feng's Notes </title>
-</head>
+  <meta name="description" content="iOS自动化集成1.安装环境1.1 环境说明  搭建机器：Mac mini 开发工具：XCode v8.2.1 Mac系统： OS X 10.12.5 jenkins版：2.46 sonarqube : 6.2 fastlane : 2.9.1 oclint : 0.11.1   1.2 安装jenkins 通过brew安装 1brew install jenkins  Mac上开机自启动方法 1">
+<meta name="keywords" content="iOS开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS自动化集成">
+<meta property="og:url" content="https://toss156.github.io/2017/03/14/iOS持续集成/index.html">
+<meta property="og:site_name" content="Feng&#39;s Notes">
+<meta property="og:description" content="iOS自动化集成1.安装环境1.1 环境说明  搭建机器：Mac mini 开发工具：XCode v8.2.1 Mac系统： OS X 10.12.5 jenkins版：2.46 sonarqube : 6.2 fastlane : 2.9.1 oclint : 0.11.1   1.2 安装jenkins 通过brew安装 1brew install jenkins  Mac上开机自启动方法 1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-03-19T12:04:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS自动化集成">
+<meta name="twitter:description" content="iOS自动化集成1.安装环境1.1 环境说明  搭建机器：Mac mini 开发工具：XCode v8.2.1 Mac系统： OS X 10.12.5 jenkins版：2.46 sonarqube : 6.2 fastlane : 2.9.1 oclint : 0.11.1   1.2 安装jenkins 通过brew安装 1brew install jenkins  Mac上开机自启动方法 1">
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+
+
+
+
+  <link rel="canonical" href="https://toss156.github.io/2017/03/14/iOS持续集成/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>iOS自动化集成 | Feng's Notes</title>
   
 
 
@@ -189,36 +149,66 @@ oclint : 0.11.1
 
 
 
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
 
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
 
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Feng's Notes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
-        <h1 class="site-subtitle" itemprop="description"></h1>
+        <h1 class="site-subtitle" itemprop="description">周海锋的个人博客</h1>
       
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -226,55 +216,72 @@ oclint : 0.11.1
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -282,12 +289,20 @@ oclint : 0.11.1
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -300,16 +315,22 @@ oclint : 0.11.1
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2017/03/14/iOS持续集成/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
 
@@ -318,11 +339,7 @@ oclint : 0.11.1
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                iOS自动化集成
+          <h2 class="post-title" itemprop="name headline">iOS自动化集成
               
             
           </h2>
@@ -330,6 +347,11 @@ oclint : 0.11.1
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -337,18 +359,35 @@ oclint : 0.11.1
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T23:28:43+08:00">
-                2017-03-14
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-03-14 23:28:43" itemprop="dateCreated datePublished" datetime="2017-03-14T23:28:43+08:00">2017-03-14</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-03-19 20:04:30" itemprop="dateModified" datetime="2017-03-19T20:04:30+08:00">2017-03-19</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -359,11 +398,7 @@ oclint : 0.11.1
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
 
                 
                 
@@ -373,30 +408,9 @@ oclint : 0.11.1
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/14/iOS持续集成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/iOS持续集成/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/2017/03/14/iOS持续集成/" class="leancloud_visitors" data-flag-title="iOS自动化集成">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -409,7 +423,9 @@ oclint : 0.11.1
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -428,69 +444,48 @@ oclint : 0.11.1
 </ul>
 </blockquote>
 <h3 id="1-2-安装jenkins"><a href="#1-2-安装jenkins" class="headerlink" title="1.2 安装jenkins"></a>1.2 安装jenkins</h3><p> 通过brew安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install jenkins</div></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span><span class="keyword">jenkins</span></span><br></pre></td></tr></table></figure>
 <p> Mac上开机自启动方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 设置开机自启动配置文件</div><div class="line">ln -sfv /usr/local/opt/jenkins/*.plist ~/Library/LaunchAgents</div><div class="line"># 载入配置文件</div><div class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist</div><div class="line"># jenkins服务的启动|停止</div><div class="line">brew services [start|stop] jenkins</div></pre></td></tr></table></figure>
-<h3 id="1-2-安装fastlane"><a href="#1-2-安装fastlane" class="headerlink" title="1.2 安装fastlane"></a>1.2 安装fastlane</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># rubychina的 fastlane 上面的落后好几个版本，所以这里我们先把rubygems的源加回来</div><div class="line">gem source -a https://rubygems.org/</div><div class="line">gem install fastlane</div></pre></td></tr></table></figure>
-<h3 id="1-3-安装oclint"><a href="#1-3-安装oclint" class="headerlink" title="1.3 安装oclint"></a>1.3 安装oclint</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 不走下面的命令直接install oclint的话, 下载的版本不是最新版, 文档将不能正常生成</div><div class="line">brew tap oclint/formulae</div><div class="line">brew install oclint</div></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置开机自启动配置文件</span></span><br><span class="line">ln -sfv <span class="string">/usr/local/opt/jenkins/</span>*<span class="string">.plist</span> ~<span class="string">/Library/LaunchAgents</span></span><br><span class="line"><span class="comment"># 载入配置文件</span></span><br><span class="line">launchctl load ~<span class="string">/Library/LaunchAgents/homebrew.mxcl.jenkins.plist</span></span><br><span class="line"><span class="comment"># jenkins服务的启动|停止</span></span><br><span class="line">brew services [start|stop] jenkins</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-安装fastlane"><a href="#1-2-安装fastlane" class="headerlink" title="1.2 安装fastlane"></a>1.2 安装fastlane</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rubychina的 fastlane 上面的落后好几个版本，所以这里我们先把rubygems的源加回来</span></span><br><span class="line">gem source -<span class="keyword">a</span> <span class="keyword">https</span>://rubygems.org/</span><br><span class="line">gem install fastlane</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-安装oclint"><a href="#1-3-安装oclint" class="headerlink" title="1.3 安装oclint"></a>1.3 安装oclint</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 不走下面的命令直接install oclint的话, 下载的版本不是最新版, 文档将不能正常生成</span><br><span class="line"><span class="keyword">brew </span>tap oclint/formulae</span><br><span class="line"><span class="keyword">brew </span>install oclint</span><br></pre></td></tr></table></figure>
 <p>直接写在可能很慢，也可以通过迅雷等工具下载完以后，讲zip包放到brew cache 目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 查看brew cache目录</div><div class="line">brew --cache</div><div class="line"># 拷贝oclint-0.11.1.tar.gz 到目录以后，执行可以马上安装</div><div class="line">brew install oclint</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看brew cache目录</span></span><br><span class="line">brew --cache</span><br><span class="line"><span class="meta">#</span><span class="bash"> 拷贝oclint-0.11.1.tar.gz 到目录以后，执行可以马上安装</span></span><br><span class="line">brew install oclint</span><br></pre></td></tr></table></figure>
 <h3 id="1-4-安装sonar"><a href="#1-4-安装sonar" class="headerlink" title="1.4 安装sonar"></a>1.4 安装sonar</h3><p>网上很多通过源码zip安装的方法，这里我们也通过brew 来安装</p>
-<h4 id="1-4-1-通过brew安装"><a href="#1-4-1-通过brew安装" class="headerlink" title="1.4.1 通过brew安装"></a>1.4.1 通过brew安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-2-设置数据库用户"><a href="#1-4-2-设置数据库用户" class="headerlink" title="1.4.2 设置数据库用户"></a>1.4.2 设置数据库用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;</div><div class="line">CREATE USER &apos;sonar&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;%&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;sonar&apos;;</div><div class="line">FLUSH PRIVILEGES;</div></pre></td></tr></table></figure>
-<h4 id="1-4-3-修改-conf-sonar-properties"><a href="#1-4-3-修改-conf-sonar-properties" class="headerlink" title="1.4.3 修改 /conf/sonar.properties"></a>1.4.3 修改 /conf/sonar.properties</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sonar.jdbc.username=sonar</div><div class="line">sonar.jdbc.password=sonar</div><div class="line"># 这里原来是localhost的，无法连接，改成127.0.0.1以后连接成功</div><div class="line">sonar.jdbc.url=jdbc:mysql://127.0.0.1:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</div></pre></td></tr></table></figure>
-<h4 id="1-4-5-sonar汉化"><a href="#1-4-5-sonar汉化" class="headerlink" title="1.4.5 sonar汉化"></a>1.4.5 sonar汉化</h4><p><a href="https://github.com/SonarQubeCommunity/sonar-l10n-zh" target="_blank" rel="external">汉化包下载地址</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 下载 sonar-l10n-zh-plugin-1.14.jar</div><div class="line"># 下载后放到 /usr/local/Cellar/sonarqube/6.2/libexec/extensions/plugins 路径下，重启sonar即可</div><div class="line"></div><div class="line">brew services restart sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-6-Objective-C插件下载"><a href="#1-4-6-Objective-C插件下载" class="headerlink" title="1.4.6 Objective-C插件下载"></a>1.4.6 Objective-C插件下载</h4><p><a href="https://github.com/ChenTF/iOS-sonarShell" target="_blank" rel="external">Objective-C插件</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 下载 sonar-objective-c-plugin-0.5.0-SNAPSHOT.jar</div><div class="line"># 放到 /usr/local/Cellar/sonarqube/6.2/libexec/extensions/plugins 路径下，重启sonar即可</div><div class="line">brew services restart sonarqube</div></pre></td></tr></table></figure>
-<h4 id="1-4-7-安装-sonar-scanner"><a href="#1-4-7-安装-sonar-scanner" class="headerlink" title="1.4.7 安装 sonar-scanner"></a>1.4.7 安装 sonar-scanner</h4><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">jdk8下载</a></p>
+<h4 id="1-4-1-通过brew安装"><a href="#1-4-1-通过brew安装" class="headerlink" title="1.4.1 通过brew安装"></a>1.4.1 通过brew安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install sonarqube</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-2-设置数据库用户"><a href="#1-4-2-设置数据库用户" class="headerlink" title="1.4.2 设置数据库用户"></a>1.4.2 设置数据库用户</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> sonar <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'sonar'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</span><br><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">ON</span> sonar.* <span class="keyword">TO</span> <span class="string">'sonar'</span>@<span class="string">'%'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</span><br><span class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">ON</span> sonar.* <span class="keyword">TO</span> <span class="string">'sonar'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-3-修改-conf-sonar-properties"><a href="#1-4-3-修改-conf-sonar-properties" class="headerlink" title="1.4.3 修改 /conf/sonar.properties"></a>1.4.3 修改 /conf/sonar.properties</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sonar.jdbc.<span class="attribute">username</span>=sonar</span><br><span class="line">sonar.jdbc.<span class="attribute">password</span>=sonar</span><br><span class="line"><span class="comment"># 这里原来是localhost的，无法连接，改成127.0.0.1以后连接成功</span></span><br><span class="line">sonar.jdbc.<span class="attribute">url</span>=jdbc:mysql://127.0.0.1:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-5-sonar汉化"><a href="#1-4-5-sonar汉化" class="headerlink" title="1.4.5 sonar汉化"></a>1.4.5 sonar汉化</h4><p><a href="https://github.com/SonarQubeCommunity/sonar-l10n-zh" target="_blank" rel="noopener">汉化包下载地址</a></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 下载 sonar-l10n-zh-plugin-<span class="number">1.14</span>.jar</span><br><span class="line"># 下载后放到 <span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>sonarqube<span class="regexp">/6.2/</span>libexec<span class="regexp">/extensions/</span>plugins 路径下，重启sonar即可</span><br><span class="line"></span><br><span class="line">brew services restart sonarqube</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-6-Objective-C插件下载"><a href="#1-4-6-Objective-C插件下载" class="headerlink" title="1.4.6 Objective-C插件下载"></a>1.4.6 Objective-C插件下载</h4><p><a href="https://github.com/ChenTF/iOS-sonarShell" target="_blank" rel="noopener">Objective-C插件</a></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 下载 sonar-objective-c-plugin-<span class="number">0.5</span>.<span class="number">0</span>-SNAPSHOT.jar</span><br><span class="line"># 放到 <span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>sonarqube<span class="regexp">/6.2/</span>libexec<span class="regexp">/extensions/</span>plugins 路径下，重启sonar即可</span><br><span class="line">brew services restart sonarqube</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-7-安装-sonar-scanner"><a href="#1-4-7-安装-sonar-scanner" class="headerlink" title="1.4.7 安装 sonar-scanner"></a>1.4.7 安装 sonar-scanner</h4><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">jdk8下载</a></p>
 <p>网上的教程里面只有 <strong>sonar-runner</strong>，但是官方那边只有<strong>sonar-scanner</strong> 可以下载，看了配置信息，应该是2.4版本以后改名了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 注意：sonar-scanner 需要 jre 1.8以上版本，也可以直接下载jdk </div><div class="line">brew install sonar-scanner</div></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：sonar-scanner 需要 jre 1.8以上版本，也可以直接下载jdk </span></span><br><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>sonar-<span class="keyword">scanner</span></span><br></pre></td></tr></table></figure>
 <p>配置sonar-scanner </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 配置信息文件, 配置和sonarqube相同即可</div><div class="line">/usr/local/Cellar/sonar-scanner/2.8/libexec/conf/sonar-scanner.properties</div></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置信息文件, 配置和sonarqube相同即可</span></span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/Cellar/</span>sonar-scanner<span class="regexp">/2.8/</span>libexec<span class="regexp">/conf/</span>sonar-scanner.properties</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li>基于Sonar的iOS代码质量检测系统-(WillkYang) : <a href="http://www.jianshu.com/p/6b61783b9a38" target="_blank" rel="external">http://www.jianshu.com/p/6b61783b9a38</a></li>
-<li>[实践]iOS Sonar集成流程详解-(advancer_chen) : <a href="https://my.oschina.net/ChenTF/blog/708646" target="_blank" rel="external">https://my.oschina.net/ChenTF/blog/708646</a></li>
+<li>基于Sonar的iOS代码质量检测系统-(WillkYang) : <a href="http://www.jianshu.com/p/6b61783b9a38" target="_blank" rel="noopener">http://www.jianshu.com/p/6b61783b9a38</a></li>
+<li>[实践]iOS Sonar集成流程详解-(advancer_chen) : <a href="https://my.oschina.net/ChenTF/blog/708646" target="_blank" rel="noopener">https://my.oschina.net/ChenTF/blog/708646</a></li>
 </ul>
 
       
     </div>
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
+       
+    
+    
 
-    <div>
-      
-        
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong>本文作者：</strong>
-      toss156
-    </li>
-    <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="https://toss156.github.io/2017/03/14/iOS持续集成/" title="iOS自动化集成">https://toss156.github.io/2017/03/14/iOS持续集成/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong>
-      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-
-
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -502,7 +497,7 @@ oclint : 0.11.1
       
 
       
-        
+      
       
 
       
@@ -530,47 +525,21 @@ oclint : 0.11.1
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
-
-    <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2017/03/14/iOS持续集成/"
-     data-title="iOS自动化集成"
-     data-content=""
-     data-url="https://toss156.github.io/2017/03/14/iOS持续集成/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
-    </div>
   </div>
 
-          
+
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2017/03/14/iOS持续集成/"
-           data-title="iOS自动化集成" data-url="https://toss156.github.io/2017/03/14/iOS持续集成/">
-      </div>
-    
-  </div>
 
 
         </div>
@@ -586,119 +555,118 @@ oclint : 0.11.1
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg"
-               alt="toss156" />
-          <p class="site-author-name" itemprop="name">toss156</p>
-           
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg" alt="toss156">
+            
+              <p class="site-author-name" itemprop="name">toss156</p>
               <p class="site-description motion-element" itemprop="description"></p>
-           
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/toss156" title="GitHub &rarr; https://github.com/toss156" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:308276366@qq.com" title="E-Mail &rarr; mailto:308276366@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/toss156" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/u/5478084603" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/toss156/answers" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.csdn.net/toss156" target="_blank" title="CSDN">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  CSDN
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
@@ -711,7 +679,7 @@ oclint : 0.11.1
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iOS自动化集成"><span class="nav-text">iOS自动化集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装环境"><span class="nav-text">1.安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-环境说明"><span class="nav-text">1.1 环境说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装jenkins"><span class="nav-text">1.2 安装jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装fastlane"><span class="nav-text">1.2 安装fastlane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-安装oclint"><span class="nav-text">1.3 安装oclint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-安装sonar"><span class="nav-text">1.4 安装sonar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-通过brew安装"><span class="nav-text">1.4.1 通过brew安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-设置数据库用户"><span class="nav-text">1.4.2 设置数据库用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-3-修改-conf-sonar-properties"><span class="nav-text">1.4.3 修改 /conf/sonar.properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-5-sonar汉化"><span class="nav-text">1.4.5 sonar汉化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-6-Objective-C插件下载"><span class="nav-text">1.4.6 Objective-C插件下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-7-安装-sonar-scanner"><span class="nav-text">1.4.7 安装 sonar-scanner</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iOS自动化集成"><span class="nav-number">1.</span> <span class="nav-text">iOS自动化集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装环境"><span class="nav-number">1.1.</span> <span class="nav-text">1.安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-环境说明"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 环境说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装jenkins"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 安装jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装fastlane"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.2 安装fastlane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-安装oclint"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.3 安装oclint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-安装sonar"><span class="nav-number">1.1.5.</span> <span class="nav-text">1.4 安装sonar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-通过brew安装"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">1.4.1 通过brew安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-设置数据库用户"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">1.4.2 设置数据库用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-3-修改-conf-sonar-properties"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">1.4.3 修改 /conf/sonar.properties</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-5-sonar汉化"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">1.4.5 sonar汉化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-6-Objective-C插件下载"><span class="nav-number">1.1.5.5.</span> <span class="nav-text">1.4.6 Objective-C插件下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-7-安装-sonar-scanner"><span class="nav-number">1.1.5.6.</span> <span class="nav-text">1.4.7 安装 sonar-scanner</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -719,11 +687,6 @@ oclint : 0.11.1
       <!--/noindex-->
       
 
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-        </div>
       
 
     </div>
@@ -736,36 +699,55 @@ oclint : 0.11.1
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">toss156</span>
+
+  
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
 
 
         
+
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
     
   </div>
 
@@ -785,91 +767,10 @@ oclint : 0.11.1
 
 
 
-  
 
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"toss156"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-      
-      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
 
@@ -885,115 +786,63 @@ oclint : 0.11.1
 
   
   
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("PxTaF6TQszuSMorNjEg6793O-gzGzoHsz", "pL6S4AgQrcsKHTST4ncKj4FT");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
 
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
 
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
 
 
@@ -1001,6 +850,24 @@ oclint : 0.11.1
 
   
 
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
