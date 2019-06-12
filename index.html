@@ -318,6 +318,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/06/12/适配-iOS13/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="toss156">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/12/适配-iOS13/" class="post-title-link" itemprop="https://toss156.github.io/index.html">适配 iOS13</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-12 15:51:32" itemprop="dateCreated datePublished" datetime="2019-06-12T15:51:32+08:00">2019-06-12</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="第三方登录"><a href="#第三方登录" class="headerlink" title="第三方登录"></a>第三方登录</h2><blockquote>
+<p>Sign In with Apple will be available for beta testing this summer. It will be required as an option for users in apps that support third-party sign-in when it is commercially available later this year. </p>
+</blockquote>
+<p>如果 APP 支持三方登陆（Facbook、Google、微信、QQ、支付宝等），就必须支持苹果登，且要放前边.</p>
+<p>链接：</p>
+<p><a href="https//developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/">Sign in with Apple 设计规范</a></p>
+<h2 id="黑夜模式"><a href="#黑夜模式" class="headerlink" title="黑夜模式"></a>黑夜模式</h2><blockquote>
+<p>Apps on iOS 13 are expected to support dark mode<br>Use system colors and materials<br>Create your own dynamic colors and images Leverage flexible infrastructure</p>
+</blockquote>
+<p>审核强制要求适配黑夜模式。</p>
+<h2 id="KVC-限制"><a href="#KVC-限制" class="headerlink" title="KVC 限制"></a>KVC 限制</h2><p>iOS13以后已经不能肆无忌惮的通过KVC来修改一些没有暴露出来的属性了。</p>
+<p>已知：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UITextField 的 _placeholderLabel</span></span><br><span class="line">[textField <span class="string">setValue:</span>[UIColor xxx] <span class="string">forKeyPath:</span>@<span class="string">"_placeholderLabel.textColor"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// UISearchBar 的 _searchField</span></span><br><span class="line">[searchBar <span class="string">valueForKey:</span>@<span class="string">"_searchField"</span>];</span><br></pre></td></tr></table></figure>
+<p>会提示 </p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*** Terminating app due <span class="keyword">to</span> uncaught exception <span class="symbol">'NSGenericException</span>',  reason: <span class="symbol">'Access</span> <span class="keyword">to</span> xxx<span class="symbol">'s</span> _xxx ivar <span class="keyword">is</span> prohibited. This <span class="keyword">is</span> an application bug'</span><br></pre></td></tr></table></figure>
+<h2 id="模态弹出默认交互改变"><a href="#模态弹出默认交互改变" class="headerlink" title="模态弹出默认交互改变"></a>模态弹出默认交互改变</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> Defines <span class="keyword">the</span> presentation style <span class="keyword">that</span> will be used <span class="keyword">for</span> this view controller when <span class="keyword">it</span> <span class="keyword">is</span> presented modally. Set this <span class="keyword">property</span> <span class="keyword">on</span> <span class="keyword">the</span> view controller <span class="keyword">to</span> be presented, <span class="keyword">not</span> <span class="keyword">the</span> presenter.</span><br><span class="line"> If this <span class="keyword">property</span> has been <span class="keyword">set</span> <span class="keyword">to</span> UIModalPresentationAutomatic, reading <span class="keyword">it</span> will always <span class="literal">return</span> a concrete presentation style. By default UIViewController resolves UIModalPresentationAutomatic <span class="keyword">to</span> UIModalPresentationPageSheet, <span class="keyword">but</span> other system-provided view controllers may resolve UIModalPresentationAutomatic <span class="keyword">to</span> other concrete presentation styles.</span><br><span class="line"> Defaults <span class="keyword">to</span> UIModalPresentationAutomatic <span class="keyword">on</span> iOS starting <span class="keyword">in</span> iOS <span class="number">13.0</span>, <span class="keyword">and</span> UIModalPresentationFullScreen <span class="keyword">on</span> previous versions. Defaults <span class="keyword">to</span> UIModalPresentationFullScreen <span class="keyword">on</span> all other platforms.</span><br><span class="line"> */</span><br><span class="line">@<span class="keyword">property</span>(nonatomic,assign) UIModalPresentationStyle modalPresentationStyle API_AVAILABLE(ios(<span class="number">3.2</span>));</span><br></pre></td></tr></table></figure>
+<p>iOS 13 的 present 默认有视差效果，模态出来的界面现在默认都下滑返回。</p>
+<p>一些页面必须要点确认才能消失的，需要适配。</p>
+<p>如果项目中页面高度全部是屏幕尺寸，那么多出来的导航高度会出现问题。</p>
+<p>可以 手动写</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Swift</span></span><br><span class="line"><span class="keyword">self</span>.modalPresentationStyle = .fullScreen</span><br><span class="line"></span><br><span class="line"><span class="comment">// Objective-C</span></span><br><span class="line"><span class="keyword">self</span>.modalPresentationStyle = <span class="built_in">UIModalPresentationFullScreen</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="UISegmentedControl-默认样式改变"><a href="#UISegmentedControl-默认样式改变" class="headerlink" title="UISegmentedControl 默认样式改变"></a>UISegmentedControl 默认样式改变</h2><p>默认样式变为白底黑字，如果设置修改过颜色的话，页面需要修改</p>
+<h2 id="App启动过程中，部分View可能无法实时获取到frame"><a href="#App启动过程中，部分View可能无法实时获取到frame" class="headerlink" title="App启动过程中，部分View可能无法实时获取到frame"></a>App启动过程中，部分View可能无法实时获取到frame</h2><p>可能是为了优化启动速度，App启动过程中，部分View可能无法实时获取到正确的frame<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只有等执行完 UIViewController 的 viewDidAppear方法以后，才能获取到正确的值，在viewDidLoad等地方 frame Size 为 0，例如：</span></span><br><span class="line"> [<span class="meta">[UIApplication sharedApplication</span>] statusBarFrame];</span><br></pre></td></tr></table></figure></p>
+<p>其他参考：</p>
+<p><a href="https://github.com/ChenYilong/iOS13AdaptationTips" target="_blank" rel="noopener">ChenYilong/iOS13AdaptationTips</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/06/12/Github国内公司开源账号/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2023,7 +2185,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
