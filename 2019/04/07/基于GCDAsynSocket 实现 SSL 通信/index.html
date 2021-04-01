@@ -1,138 +1,48 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"toss156.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.5.0',
-    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="GCDAsynSocketGCDAsynSocket是一个开源的基于GCD的异步的socket库。它支持IPV4和IPV6地址，SSL/TLS协议。同时它支持iOS端和Mac端。本篇主要介绍一下 GCDAsynSocket 中的 SSL/TLS 双向手动验证的实现 证书 p12证书： 12// 通过 pem 证书转换而来openssl pkcs12 -export -in my_cer.pem -">
-<meta name="keywords" content="网络">
+  <meta name="description" content="GCDAsynSocketGCDAsynSocket是一个开源的基于GCD的异步的socket库。它支持IPV4和IPV6地址，SSL&#x2F;TLS协议。同时它支持iOS端和Mac端。本篇主要介绍一下 GCDAsynSocket 中的 SSL&#x2F;TLS 双向手动验证的实现 证书 p12证书： &#x2F;&#x2F; 通过 pem 证书转换而来 openssl pkcs12 -export -in my_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于GCDAsynSocket 实现 SSL 通信">
-<meta property="og:url" content="https://toss156.github.io/2019/04/07/基于GCDAsynSocket 实现 SSL 通信/index.html">
+<meta property="og:url" content="https://toss156.github.io/2019/04/07/%E5%9F%BA%E4%BA%8EGCDAsynSocket%20%E5%AE%9E%E7%8E%B0%20SSL%20%E9%80%9A%E4%BF%A1/index.html">
 <meta property="og:site_name" content="Feng&#39;s Notes">
-<meta property="og:description" content="GCDAsynSocketGCDAsynSocket是一个开源的基于GCD的异步的socket库。它支持IPV4和IPV6地址，SSL/TLS协议。同时它支持iOS端和Mac端。本篇主要介绍一下 GCDAsynSocket 中的 SSL/TLS 双向手动验证的实现 证书 p12证书： 12// 通过 pem 证书转换而来openssl pkcs12 -export -in my_cer.pem -">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-08T06:27:15.355Z">
+<meta property="og:description" content="GCDAsynSocketGCDAsynSocket是一个开源的基于GCD的异步的socket库。它支持IPV4和IPV6地址，SSL&#x2F;TLS协议。同时它支持iOS端和Mac端。本篇主要介绍一下 GCDAsynSocket 中的 SSL&#x2F;TLS 双向手动验证的实现 证书 p12证书： &#x2F;&#x2F; 通过 pem 证书转换而来 openssl pkcs12 -export -in my_">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-07T06:21:06.000Z">
+<meta property="article:modified_time" content="2019-04-08T06:27:15.355Z">
+<meta property="article:author" content="toss156">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于GCDAsynSocket 实现 SSL 通信">
-<meta name="twitter:description" content="GCDAsynSocketGCDAsynSocket是一个开源的基于GCD的异步的socket库。它支持IPV4和IPV6地址，SSL/TLS协议。同时它支持iOS端和Mac端。本篇主要介绍一下 GCDAsynSocket 中的 SSL/TLS 双向手动验证的实现 证书 p12证书： 12// 通过 pem 证书转换而来openssl pkcs12 -export -in my_cer.pem -">
+
+<link rel="canonical" href="https://toss156.github.io/2019/04/07/%E5%9F%BA%E4%BA%8EGCDAsynSocket%20%E5%AE%9E%E7%8E%B0%20SSL%20%E9%80%9A%E4%BF%A1/">
 
 
-
-
-
-
-  <link rel="canonical" href="https://toss156.github.io/2019/04/07/基于GCDAsynSocket 实现 SSL 通信/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -144,152 +54,79 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Feng's Notes</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">周海锋的个人博客</h1>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Feng's Notes</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">周海锋的个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -297,113 +134,61 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/04/07/%E5%9F%BA%E4%BA%8EGCDAsynSocket%20%E5%AE%9E%E7%8E%B0%20SSL%20%E9%80%9A%E4%BF%A1/">
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/04/07/基于GCDAsynSocket 实现 SSL 通信/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">基于GCDAsynSocket 实现 SSL 通信
-              
-            
-          </h2>
-        
+        <h1 class="post-title" itemprop="name headline">
+          基于GCDAsynSocket 实现 SSL 通信
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2019-04-07 14:21:06" itemprop="dateCreated datePublished" datetime="2019-04-07T14:21:06+08:00">2019-04-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-04-08 14:27:15" itemprop="dateModified" datetime="2019-04-08T14:27:15+08:00">2019-04-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -411,315 +196,263 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h4 id="GCDAsynSocket"><a href="#GCDAsynSocket" class="headerlink" title="GCDAsynSocket"></a>GCDAsynSocket</h4><p><strong>GCDAsynSocket</strong><br>是一个开源的基于GCD的异步的socket库。它支持IPV4和IPV6地址，<strong>SSL/TLS</strong>协议。同时它支持iOS端和Mac端。本篇主要介绍一下 <strong>GCDAsynSocket</strong> 中的 <strong>SSL/TLS</strong> 双向手动验证的实现</p>
 <h4 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h4><ul>
 <li><p>p12证书：</p>
-<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过 pem 证书转换而来</span></span><br><span class="line">openssl pkcs12 -<span class="keyword">export</span> -<span class="keyword">in</span> my_cer.pem -<span class="keyword">out</span> my_cer.p12</span><br></pre></td></tr></table></figure>
-</li>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 通过 pem 证书转换而来
+openssl pkcs12 -export -in my_cer.pem -out my_cer.p12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>cer证书：</p>
 </li>
 </ul>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"><span class="comment">// 方法一：</span></span><br><span class="line"><span class="comment">// 服务器自签名证书:</span></span><br><span class="line"><span class="comment">// openssl req -new -x509 -nodes -days 365 -newkey rsa:1024  -out my_cer.crt -keyout my_cer.key</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要cer格式证书，分发到终端后需要转换一下</span></span><br><span class="line"><span class="comment">// openssl x509 -outform der -in my_cer.crt -out my_cer.der</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 后缀名改成 cer 即可</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二：</span></span><br><span class="line"><span class="comment">// 1.获取根证书p12文件 </span></span><br><span class="line"><span class="comment">// 2.导入钥匙串</span></span><br><span class="line"><span class="comment">// 3.从钥匙串导出根证书cer文件即可 </span></span><br><span class="line"></span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h4 id="SSL-TLS"><a href="#SSL-TLS" class="headerlink" title="SSL/TLS"></a>SSL/TLS</h4><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addSecurtyTransport &#123;</span><br><span class="line">    <span class="built_in">NSMutableDictionary</span> *settings = [<span class="built_in">NSMutableDictionary</span> dictionary];</span><br><span class="line">    <span class="comment">// SSL 证书</span></span><br><span class="line">    <span class="built_in">NSData</span> *pkcs12data = [[<span class="built_in">NSData</span> alloc] initWithContentsOfFile:[[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"my_gateway"</span> ofType:<span class="string">@"p12"</span>]];</span><br><span class="line">    <span class="built_in">CFDataRef</span> inPKCS12Data = (<span class="built_in">CFDataRef</span>)<span class="built_in">CFBridgingRetain</span>(pkcs12data);</span><br><span class="line">    <span class="comment">// c语言字符串</span></span><br><span class="line">    <span class="built_in">CFStringRef</span> password = <span class="built_in">CFSTR</span>(<span class="string">"123456"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">void</span> *keys[] = &#123; kSecImportExportPassphrase &#125;;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">void</span> *values[] = &#123; password &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">CFDictionaryRef</span> options = <span class="built_in">CFDictionaryCreate</span>(<span class="literal">NULL</span>, keys, values, <span class="number">1</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="built_in">CFArrayRef</span> items = <span class="built_in">CFArrayCreate</span>(<span class="literal">NULL</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    OSStatus securityError = SecPKCS12Import(inPKCS12Data, options, &amp;items);</span><br><span class="line">    <span class="built_in">CFRelease</span>(options);</span><br><span class="line">    <span class="built_in">CFRelease</span>(password);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(securityError == errSecSuccess)</span><br><span class="line">    ZQLog(<span class="string">@"Success opening p12 certificate."</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">CFDictionaryRef</span> identityDict = <span class="built_in">CFArrayGetValueAtIndex</span>(items, <span class="number">0</span>);</span><br><span class="line">    SecIdentityRef myIdent = (SecIdentityRef)<span class="built_in">CFDictionaryGetValue</span>(identityDict,</span><br><span class="line">    kSecImportItemIdentity);</span><br><span class="line">    SecIdentityRef certArray[<span class="number">1</span>] = &#123; myIdent &#125;;</span><br><span class="line">    <span class="built_in">CFArrayRef</span> myCerts = <span class="built_in">CFArrayCreate</span>(<span class="literal">NULL</span>, (<span class="keyword">void</span> *)certArray, <span class="number">1</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始手动SSL证书验证，必定要设置此key</span></span><br><span class="line">    [settings setObject:(<span class="keyword">id</span>)<span class="built_in">CFBridgingRelease</span>(myCerts) forKey:(<span class="built_in">NSString</span> *)kCFStreamSSLCertificates];</span><br><span class="line">    [settings setObject:@(<span class="literal">YES</span>) forKey:GCDAsyncSocketManuallyEvaluateTrust];</span><br><span class="line">    [settings setObject:@(<span class="literal">NO</span>) forKey:GCDAsyncSocketUseCFStreamForTLS];</span><br><span class="line"></span><br><span class="line">    [<span class="keyword">self</span>.socketClient startTLS:settings];</span><br><span class="line">    [<span class="keyword">self</span>.socketClient readDataWithTimeout:<span class="number">-1</span> tag:<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#progma mark - Delegate</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// # socket已连接，开启SSL</span></span><br><span class="line">- (<span class="keyword">void</span>)socket:(GCDAsyncSocket *)sock didConnectToHost:(<span class="built_in">NSString</span> *)host port:(uint16_t)port &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.useTLS) &#123;</span><br><span class="line">        [<span class="keyword">self</span> addSecurtyTransport];</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// # SSL连接已建立</span></span><br><span class="line">- (<span class="keyword">void</span>)socketDidSecure:(GCDAsyncSocket *)sock &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.useTLS) &#123;</span><br><span class="line">        _socketClient = sock;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// # 手动验证服务端证书</span></span><br><span class="line">- (<span class="keyword">void</span>)socket:(GCDAsyncSocket *)sock didReceiveTrust:(SecTrustRef)trust completionHandler:(<span class="keyword">void</span> (^)(<span class="built_in">BOOL</span>))completionHandler &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *cerPath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"my_gateway"</span> ofType:<span class="string">@"cer"</span>];</span><br><span class="line">    <span class="built_in">NSData</span> *cerData = [<span class="built_in">NSData</span> dataWithContentsOfFile:cerPath];</span><br><span class="line"></span><br><span class="line">    OSStatus status = <span class="number">-1</span>;</span><br><span class="line">    SecTrustResultType result = kSecTrustResultDeny;</span><br><span class="line">    <span class="keyword">if</span> (cerData) &#123;</span><br><span class="line">        SecCertificateRef cert1;</span><br><span class="line">        <span class="comment">// 将DER encoded X.509转换成 SecCertificateRef</span></span><br><span class="line">        cert1 = SecCertificateCreateWithData(<span class="literal">NULL</span>, (__bridge <span class="built_in">CFDataRef</span>) cerData);</span><br><span class="line">        <span class="built_in">NSArray</span> *caArray = [<span class="built_in">NSArray</span> arrayWithObjects:(__bridge <span class="keyword">id</span>)(cert1), <span class="literal">nil</span>];</span><br><span class="line">        <span class="comment">// 设置证书用于验证</span></span><br><span class="line">        SecTrustSetAnchorCertificates(trust, (__bridge <span class="built_in">CFArrayRef</span>)caArray);</span><br><span class="line">        <span class="comment">// 同步验证服务器证书和本地证书是否匹配，会一直阻塞验证</span></span><br><span class="line">        status = SecTrustEvaluate(trust, &amp;result);</span><br><span class="line">        <span class="built_in">CFRelease</span>(cert1);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"local certificate could't be loaded!"</span>);</span><br><span class="line">        completionHandler(<span class="literal">NO</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((status == noErr &amp;&amp;</span><br><span class="line">    (result == kSecTrustResultProceed || result == kSecTrustResultUnspecified))) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"成功通过验证，证书可信"</span>);</span><br><span class="line">        completionHandler(<span class="literal">YES</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">CFArrayRef</span> arrayRefTrust = SecTrustCopyProperties(trust);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"error in connection occured\n %@"</span>, arrayRefTrust);</span><br><span class="line">        completionHandler(<span class="literal">NO</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="自签名证书"><a href="#自签名证书" class="headerlink" title="自签名证书"></a>自签名证书</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自签名证书需要设置</span></span><br><span class="line">[settings <span class="string">setObject:</span>@(YES) <span class="string">forKey:</span>GCDAsyncSocketUseCFStreamForTLS];</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;*
+&#x2F;&#x2F; 方法一：
+&#x2F;&#x2F; 服务器自签名证书:
+&#x2F;&#x2F; openssl req -new -x509 -nodes -days 365 -newkey rsa:1024  -out my_cer.crt -keyout my_cer.key
 
-      
+&#x2F;&#x2F; 需要cer格式证书，分发到终端后需要转换一下
+&#x2F;&#x2F; openssl x509 -outform der -in my_cer.crt -out my_cer.der
+
+&#x2F;&#x2F; 后缀名改成 cer 即可
+
+&#x2F;&#x2F;方法二：
+&#x2F;&#x2F; 1.获取根证书p12文件 
+&#x2F;&#x2F; 2.导入钥匙串
+&#x2F;&#x2F; 3.从钥匙串导出根证书cer文件即可 
+
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="SSL-TLS"><a href="#SSL-TLS" class="headerlink" title="SSL/TLS"></a>SSL/TLS</h4><pre class="line-numbers language-none"><code class="language-none">- (void)addSecurtyTransport &#123;
+    NSMutableDictionary *settings &#x3D; [NSMutableDictionary dictionary];
+    &#x2F;&#x2F; SSL 证书
+    NSData *pkcs12data &#x3D; [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&quot;my_gateway&quot; ofType:@&quot;p12&quot;]];
+    CFDataRef inPKCS12Data &#x3D; (CFDataRef)CFBridgingRetain(pkcs12data);
+    &#x2F;&#x2F; c语言字符串
+    CFStringRef password &#x3D; CFSTR(&quot;123456&quot;);
+
+    const void *keys[] &#x3D; &#123; kSecImportExportPassphrase &#125;;
+    const void *values[] &#x3D; &#123; password &#125;;
+
+    CFDictionaryRef options &#x3D; CFDictionaryCreate(NULL, keys, values, 1, NULL, NULL);
+    CFArrayRef items &#x3D; CFArrayCreate(NULL, 0, 0, NULL);
+
+    OSStatus securityError &#x3D; SecPKCS12Import(inPKCS12Data, options, &amp;items);
+    CFRelease(options);
+    CFRelease(password);
+
+    if(securityError &#x3D;&#x3D; errSecSuccess)
+    ZQLog(@&quot;Success opening p12 certificate.&quot;);
+
+    CFDictionaryRef identityDict &#x3D; CFArrayGetValueAtIndex(items, 0);
+    SecIdentityRef myIdent &#x3D; (SecIdentityRef)CFDictionaryGetValue(identityDict,
+    kSecImportItemIdentity);
+    SecIdentityRef certArray[1] &#x3D; &#123; myIdent &#125;;
+    CFArrayRef myCerts &#x3D; CFArrayCreate(NULL, (void *)certArray, 1, NULL);
+
+    &#x2F;&#x2F;开始手动SSL证书验证，必定要设置此key
+    [settings setObject:(id)CFBridgingRelease(myCerts) forKey:(NSString *)kCFStreamSSLCertificates];
+    [settings setObject:@(YES) forKey:GCDAsyncSocketManuallyEvaluateTrust];
+    [settings setObject:@(NO) forKey:GCDAsyncSocketUseCFStreamForTLS];
+
+    [self.socketClient startTLS:settings];
+    [self.socketClient readDataWithTimeout:-1 tag:0];
+&#125;
+
+#progma mark - Delegate
+
+&#x2F;&#x2F; # socket已连接，开启SSL
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port &#123;
+    if (self.useTLS) &#123;
+        [self addSecurtyTransport];
+    &#125; 
+&#125;
+
+&#x2F;&#x2F; # SSL连接已建立
+- (void)socketDidSecure:(GCDAsyncSocket *)sock &#123;
+    if (self.useTLS) &#123;
+        _socketClient &#x3D; sock;
+    &#125;
+&#125;
+
+&#x2F;&#x2F; # 手动验证服务端证书
+- (void)socket:(GCDAsyncSocket *)sock didReceiveTrust:(SecTrustRef)trust completionHandler:(void (^)(BOOL))completionHandler &#123;
+    NSString *cerPath &#x3D; [[NSBundle mainBundle] pathForResource:@&quot;my_gateway&quot; ofType:@&quot;cer&quot;];
+    NSData *cerData &#x3D; [NSData dataWithContentsOfFile:cerPath];
+
+    OSStatus status &#x3D; -1;
+    SecTrustResultType result &#x3D; kSecTrustResultDeny;
+    if (cerData) &#123;
+        SecCertificateRef cert1;
+        &#x2F;&#x2F; 将DER encoded X.509转换成 SecCertificateRef
+        cert1 &#x3D; SecCertificateCreateWithData(NULL, (__bridge CFDataRef) cerData);
+        NSArray *caArray &#x3D; [NSArray arrayWithObjects:(__bridge id)(cert1), nil];
+        &#x2F;&#x2F; 设置证书用于验证
+        SecTrustSetAnchorCertificates(trust, (__bridge CFArrayRef)caArray);
+        &#x2F;&#x2F; 同步验证服务器证书和本地证书是否匹配，会一直阻塞验证
+        status &#x3D; SecTrustEvaluate(trust, &amp;result);
+        CFRelease(cert1);
+    &#125; else &#123;
+        NSLog(@&quot;local certificate could&#39;t be loaded!&quot;);
+        completionHandler(NO);
+    &#125;
+
+    if ((status &#x3D;&#x3D; noErr &amp;&amp;
+    (result &#x3D;&#x3D; kSecTrustResultProceed || result &#x3D;&#x3D; kSecTrustResultUnspecified))) &#123;
+        NSLog(@&quot;成功通过验证，证书可信&quot;);
+        completionHandler(YES);
+    &#125; else &#123;
+        CFArrayRef arrayRefTrust &#x3D; SecTrustCopyProperties(trust);
+        NSLog(@&quot;error in connection occured\n %@&quot;, arrayRefTrust);
+        completionHandler(NO);
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="自签名证书"><a href="#自签名证书" class="headerlink" title="自签名证书"></a>自签名证书</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 自签名证书需要设置
+[settings setObject:@(YES) forKey:GCDAsyncSocketUseCFStreamForTLS];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/网络/" rel="tag"># 网络</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/02/13/iOS获取电量的方法/" rel="next" title="iOS获取电量的方法">
-                <i class="fa fa-chevron-left"></i> iOS获取电量的方法
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/12/Github国内公司开源账号/" rel="prev" title="Github国内公司开源账号">
-                Github国内公司开源账号 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/13/iOS%E8%8E%B7%E5%8F%96%E7%94%B5%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95/" rel="prev" title="iOS获取电量的方法">
+      <i class="fa fa-chevron-left"></i> iOS获取电量的方法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/06/12/Github%E5%9B%BD%E5%86%85%E5%85%AC%E5%8F%B8%E5%BC%80%E6%BA%90%E8%B4%A6%E5%8F%B7/" rel="next" title="Github国内公司开源账号">
+      Github国内公司开源账号 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg" alt="toss156">
-            
-              <p class="site-author-name" itemprop="name">toss156</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/toss156" title="GitHub &rarr; https://github.com/toss156" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:308276366@qq.com" title="E-Mail &rarr; mailto:308276366@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#GCDAsynSocket"><span class="nav-number">1.</span> <span class="nav-text">GCDAsynSocket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#证书"><span class="nav-number">2.</span> <span class="nav-text">证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSL-TLS"><span class="nav-number">3.</span> <span class="nav-text">SSL/TLS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自签名证书"><span class="nav-number">4.</span> <span class="nav-text">自签名证书</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">toss156</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#GCDAsynSocket"><span class="nav-number">1.</span> <span class="nav-text">GCDAsynSocket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%81%E4%B9%A6"><span class="nav-number">2.</span> <span class="nav-text">证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSL-TLS"><span class="nav-number">3.</span> <span class="nav-text">SSL&#x2F;TLS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6"><span class="nav-number">4.</span> <span class="nav-text">自签名证书</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">toss156</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">toss156</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
 
 
 
@@ -728,69 +461,29 @@
 
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-
-
-
-
-
-
-
+<script src="/js/next-boot.js"></script>
 
 
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
-
-
-
-  
-
-
-
-  
 
 
 
@@ -801,32 +494,10 @@
 
 
 
-  
 
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

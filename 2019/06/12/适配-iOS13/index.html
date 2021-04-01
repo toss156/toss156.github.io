@@ -1,138 +1,48 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.5.0',
-    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"toss156.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="不久前，苹果WWDC19开发者大会在美国加州圣何塞举行。这次大会上，苹果公布了 iOS13 的更新内容，今天我们来看看如何适配 iOS13.   WWDC19视频 Xcode 11 beta 下载 macOS Catalina 10.15 beta 下载  第三方登录 Sign In with Apple will be available for beta testing this summe">
-<meta name="keywords" content="iOS开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="适配 iOS13">
-<meta property="og:url" content="https://toss156.github.io/2019/06/12/适配-iOS13/index.html">
+<meta property="og:url" content="https://toss156.github.io/2019/06/12/%E9%80%82%E9%85%8D-iOS13/index.html">
 <meta property="og:site_name" content="Feng&#39;s Notes">
 <meta property="og:description" content="不久前，苹果WWDC19开发者大会在美国加州圣何塞举行。这次大会上，苹果公布了 iOS13 的更新内容，今天我们来看看如何适配 iOS13.   WWDC19视频 Xcode 11 beta 下载 macOS Catalina 10.15 beta 下载  第三方登录 Sign In with Apple will be available for beta testing this summe">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T08:11:29.902Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-12T07:51:32.000Z">
+<meta property="article:modified_time" content="2019-06-12T08:11:29.902Z">
+<meta property="article:author" content="toss156">
+<meta property="article:tag" content="iOS开发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="适配 iOS13">
-<meta name="twitter:description" content="不久前，苹果WWDC19开发者大会在美国加州圣何塞举行。这次大会上，苹果公布了 iOS13 的更新内容，今天我们来看看如何适配 iOS13.   WWDC19视频 Xcode 11 beta 下载 macOS Catalina 10.15 beta 下载  第三方登录 Sign In with Apple will be available for beta testing this summe">
+
+<link rel="canonical" href="https://toss156.github.io/2019/06/12/%E9%80%82%E9%85%8D-iOS13/">
 
 
-
-
-
-
-  <link rel="canonical" href="https://toss156.github.io/2019/06/12/适配-iOS13/">
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -144,152 +54,79 @@
 
 
 
-
-
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Feng's Notes</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">周海锋的个人博客</h1>
-      
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Feng's Notes</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">周海锋的个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -297,101 +134,55 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/06/12/%E9%80%82%E9%85%8D-iOS13/">
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/06/12/适配-iOS13/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="toss156">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Feng's Notes">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">适配 iOS13
-              
-            
-          </h2>
-        
+        <h1 class="post-title" itemprop="name headline">
+          适配 iOS13
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">发表于</span>
               
 
               <time title="创建时间：2019-06-12 15:51:32 / 修改时间：16:11:29" itemprop="dateCreated datePublished" datetime="2019-06-12T15:51:32+08:00">2019-06-12</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -399,16 +190,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <blockquote>
 <p>不久前，苹果WWDC19开发者大会在美国加州圣何塞举行。这次大会上，苹果公布了 <strong>iOS13</strong> 的更新内容，今天我们来看看如何适配 <strong>iOS13</strong>.</p>
 </blockquote>
 <ul>
-<li><a href="https://developer.apple.com/videos/play/wwdc2019" target="_blank" rel="noopener">WWDC19视频</a></li>
-<li><a href="https://developer.apple.com/services-account/download?path=/WWDC_2019/Xcode_11_Beta/Xcode_11_Beta.xip" target="_blank" rel="noopener">Xcode 11 beta 下载</a></li>
-<li><a href="https://developer.apple.com/services-account/download?path=/WWDC_2019/macOS_10.15_Developer_Beta_Access_Utility/macOSDeveloperBetaAccessUtility.dmg" target="_blank" rel="noopener">macOS Catalina 10.15 beta 下载</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/wwdc2019">WWDC19视频</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/services-account/download?path=/WWDC_2019/Xcode_11_Beta/Xcode_11_Beta.xip">Xcode 11 beta 下载</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/services-account/download?path=/WWDC_2019/macOS_10.15_Developer_Beta_Access_Utility/macOSDeveloperBetaAccessUtility.dmg">macOS Catalina 10.15 beta 下载</a></li>
 </ul>
 <h2 id="第三方登录"><a href="#第三方登录" class="headerlink" title="第三方登录"></a>第三方登录</h2><blockquote>
 <p>Sign In with Apple will be available for beta testing this summer. It will be required as an option for users in apps that support third-party sign-in when it is commercially available later this year. </p>
@@ -421,318 +209,189 @@
 <p>审核强制要求适配黑夜模式。</p>
 <h2 id="KVC-限制"><a href="#KVC-限制" class="headerlink" title="KVC 限制"></a>KVC 限制</h2><p><strong>iOS13</strong> 以后已经不能肆无忌惮的通过 <strong>KVC</strong> 来修改一些没有暴露出来的属性了。</p>
 <blockquote>
-<p><em>*</em> Terminating app due to uncaught exception ‘NSGenericException’,  reason: ‘Access to xxx’s _xxx ivar is prohibited. This is an application bug’</p>
+<p>*** Terminating app due to uncaught exception ‘NSGenericException’,  reason: ‘Access to xxx’s _xxx ivar is prohibited. This is an application bug’</p>
 </blockquote>
 <p>已知：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UITextField 的 _placeholderLabel</span></span><br><span class="line">[textField <span class="string">setValue:</span>[UIColor xxx] <span class="string">forKeyPath:</span>@<span class="string">"_placeholderLabel.textColor"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// UISearchBar 的 _searchField</span></span><br><span class="line">[searchBar <span class="string">valueForKey:</span>@<span class="string">"_searchField"</span>];</span><br></pre></td></tr></table></figure>
-<h2 id="模态弹出默认交互改变"><a href="#模态弹出默认交互改变" class="headerlink" title="模态弹出默认交互改变"></a>模态弹出默认交互改变</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> Defines <span class="keyword">the</span> presentation style <span class="keyword">that</span> will be used <span class="keyword">for</span> this view controller when <span class="keyword">it</span> <span class="keyword">is</span> presented modally. Set this <span class="keyword">property</span> <span class="keyword">on</span> <span class="keyword">the</span> view controller <span class="keyword">to</span> be presented, <span class="keyword">not</span> <span class="keyword">the</span> presenter.</span><br><span class="line"> If this <span class="keyword">property</span> has been <span class="keyword">set</span> <span class="keyword">to</span> UIModalPresentationAutomatic, reading <span class="keyword">it</span> will always <span class="literal">return</span> a concrete presentation style. By default UIViewController resolves UIModalPresentationAutomatic <span class="keyword">to</span> UIModalPresentationPageSheet, <span class="keyword">but</span> other system-provided view controllers may resolve UIModalPresentationAutomatic <span class="keyword">to</span> other concrete presentation styles.</span><br><span class="line"> Defaults <span class="keyword">to</span> UIModalPresentationAutomatic <span class="keyword">on</span> iOS starting <span class="keyword">in</span> iOS <span class="number">13.0</span>, <span class="keyword">and</span> UIModalPresentationFullScreen <span class="keyword">on</span> previous versions. Defaults <span class="keyword">to</span> UIModalPresentationFullScreen <span class="keyword">on</span> all other platforms.</span><br><span class="line"> */</span><br><span class="line">@<span class="keyword">property</span>(nonatomic,assign) UIModalPresentationStyle modalPresentationStyle API_AVAILABLE(ios(<span class="number">3.2</span>));</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; UITextField 的 _placeholderLabel
+[textField setValue:[UIColor xxx] forKeyPath:@&quot;_placeholderLabel.textColor&quot;];
+
+&#x2F;&#x2F; UISearchBar 的 _searchField
+[searchBar valueForKey:@&quot;_searchField&quot;];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="模态弹出默认交互改变"><a href="#模态弹出默认交互改变" class="headerlink" title="模态弹出默认交互改变"></a>模态弹出默认交互改变</h2><pre class="line-numbers language-none"><code class="language-none">&#x2F;*
+ Defines the presentation style that will be used for this view controller when it is presented modally. Set this property on the view controller to be presented, not the presenter.
+ If this property has been set to UIModalPresentationAutomatic, reading it will always return a concrete presentation style. By default UIViewController resolves UIModalPresentationAutomatic to UIModalPresentationPageSheet, but other system-provided view controllers may resolve UIModalPresentationAutomatic to other concrete presentation styles.
+ Defaults to UIModalPresentationAutomatic on iOS starting in iOS 13.0, and UIModalPresentationFullScreen on previous versions. Defaults to UIModalPresentationFullScreen on all other platforms.
+ *&#x2F;
+@property(nonatomic,assign) UIModalPresentationStyle modalPresentationStyle API_AVAILABLE(ios(3.2));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
 <p><strong>iOS 13</strong> 的 <strong>presentViewController</strong> 默认有视差效果，模态出来的界面现在默认都下滑返回。<br>一些页面必须要点确认才能消失的，需要适配。如果项目中页面高度全部是屏幕尺寸，那么多出来的导航高度会出现问题。</p>
 </blockquote>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Swift</span></span><br><span class="line"><span class="keyword">self</span>.modalPresentationStyle = .fullScreen</span><br><span class="line"></span><br><span class="line"><span class="comment">// Objective-C</span></span><br><span class="line"><span class="keyword">self</span>.modalPresentationStyle = <span class="built_in">UIModalPresentationFullScreen</span>;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; Swift
+self.modalPresentationStyle &#x3D; .fullScreen
+
+&#x2F;&#x2F; Objective-C
+self.modalPresentationStyle &#x3D; UIModalPresentationFullScreen;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="UISegmentedControl-默认样式改变"><a href="#UISegmentedControl-默认样式改变" class="headerlink" title="UISegmentedControl 默认样式改变"></a>UISegmentedControl 默认样式改变</h2><blockquote>
 <p>默认样式变为白底黑字，如果设置修改过颜色的话，页面需要修改</p>
 </blockquote>
 <h2 id="App启动过程中，部分View可能无法实时获取到frame"><a href="#App启动过程中，部分View可能无法实时获取到frame" class="headerlink" title="App启动过程中，部分View可能无法实时获取到frame"></a>App启动过程中，部分View可能无法实时获取到frame</h2><blockquote>
-<p>可能是为了优化启动速度，App 启动过程中，部分View可能无法实时获取到正确的frame<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只有等执行完 UIViewController 的 viewDidAppear 方法以后，才能获取到正确的值，在viewDidLoad等地方 frame Size 为 0，例如：</span></span><br><span class="line"> [<span class="meta">[UIApplication sharedApplication</span>] statusBarFrame];</span><br></pre></td></tr></table></figure></p>
+<p>可能是为了优化启动速度，App 启动过程中，部分View可能无法实时获取到正确的frame</p>
 </blockquote>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 只有等执行完 UIViewController 的 viewDidAppear 方法以后，才能获取到正确的值，在viewDidLoad等地方 frame Size 为 0，例如：
+ [[UIApplication sharedApplication] statusBarFrame];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
 <p>其他参考：</p>
-<p><a href="https://github.com/ChenYilong/iOS13AdaptationTips" target="_blank" rel="noopener">ChenYilong/iOS13AdaptationTips</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ChenYilong/iOS13AdaptationTips">ChenYilong/iOS13AdaptationTips</a></p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-       
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/06/12/Github国内公司开源账号/" rel="next" title="Github国内公司开源账号">
-                <i class="fa fa-chevron-left"></i> Github国内公司开源账号
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/iOS%E5%BC%80%E5%8F%91/" rel="tag"># iOS开发</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/04/01/https加载慢的问题分析/" rel="prev" title="https加载慢的问题分析">
-                https加载慢的问题分析 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/06/12/Github%E5%9B%BD%E5%86%85%E5%85%AC%E5%8F%B8%E5%BC%80%E6%BA%90%E8%B4%A6%E5%8F%B7/" rel="prev" title="Github国内公司开源账号">
+      <i class="fa fa-chevron-left"></i> Github国内公司开源账号
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/01/https%E5%8A%A0%E8%BD%BD%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/" rel="next" title="https加载慢的问题分析">
+      https加载慢的问题分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
 
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg" alt="toss156">
-            
-              <p class="site-author-name" itemprop="name">toss156</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">10</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/toss156" title="GitHub &rarr; https://github.com/toss156" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:308276366@qq.com" title="E-Mail &rarr; mailto:308276366@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方登录"><span class="nav-number">1.</span> <span class="nav-text">第三方登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑夜模式"><span class="nav-number">2.</span> <span class="nav-text">黑夜模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KVC-限制"><span class="nav-number">3.</span> <span class="nav-text">KVC 限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模态弹出默认交互改变"><span class="nav-number">4.</span> <span class="nav-text">模态弹出默认交互改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UISegmentedControl-默认样式改变"><span class="nav-number">5.</span> <span class="nav-text">UISegmentedControl 默认样式改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App启动过程中，部分View可能无法实时获取到frame"><span class="nav-number">6.</span> <span class="nav-text">App启动过程中，部分View可能无法实时获取到frame</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">toss156</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">第三方登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%91%E5%A4%9C%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">黑夜模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KVC-%E9%99%90%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">KVC 限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%80%81%E5%BC%B9%E5%87%BA%E9%BB%98%E8%AE%A4%E4%BA%A4%E4%BA%92%E6%94%B9%E5%8F%98"><span class="nav-number">4.</span> <span class="nav-text">模态弹出默认交互改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UISegmentedControl-%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F%E6%94%B9%E5%8F%98"><span class="nav-number">5.</span> <span class="nav-text">UISegmentedControl 默认样式改变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%EF%BC%8C%E9%83%A8%E5%88%86View%E5%8F%AF%E8%83%BD%E6%97%A0%E6%B3%95%E5%AE%9E%E6%97%B6%E8%8E%B7%E5%8F%96%E5%88%B0frame"><span class="nav-number">6.</span> <span class="nav-text">App启动过程中，部分View可能无法实时获取到frame</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">toss156</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">toss156</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
 
 
 
@@ -741,69 +400,29 @@
 
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
 
 
-
-
-
-
-
-
-
-
-
+<script src="/js/next-boot.js"></script>
 
 
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
-
-
-
-  
-
-
-
-  
 
 
 
@@ -814,32 +433,10 @@
 
 
 
-  
 
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
