@@ -318,6 +318,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2021/04/01/https加载慢的问题分析/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="toss156">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2021/04/01/https加载慢的问题分析/" class="post-title-link" itemprop="https://toss156.github.io/index.html">https加载慢的问题分析</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-01 10:44:55 / 修改时间：10:45:11" itemprop="dateCreated datePublished" datetime="2021-04-01T10:44:55+08:00">2021-04-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>一、问题说明</strong></p>
+<p>运营反馈近期客户端页面加载变慢，经常需要10~20s以上的时间才能显示出，甚至加载不出来，需要手动退出，重新打开才能出现。</p>
+<p><strong>二、问题分析</strong></p>
+<ol>
+<li>首先怀疑是DNS问题，用的是运营商的作为首选DNS，修改成114.114.114.114  没有效果。</li>
+<li>通过输出请求连接返回时间，发现部分 https 资源访问极慢，切换到 http 地址，访问变快</li>
+<li>初步怀疑是 ssl 证书引起的，测试发现，加载缓慢的https地址的证书都是 digicert 的，证书校验ocsp地址为 <a href="http://ocsp.digicert.com，通过chinaz" target="_blank" rel="noopener">http://ocsp.digicert.com，通过chinaz</a> 检测，目前这个地址国内访问很慢  </li>
+</ol>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8618a68152964f82b3d34c506f98dff9~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<ol>
+<li>通过替换加载链接：<a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a> (GlobalSign证书)  <a href="https://suowo.cn/" target="_blank" rel="noopener">https://suowo.cn/</a> (Digicert证书, oscp地址与我们相同) 验证。 百度加载很快，suowo.cn 的表现和我们一致，加载需要很久，基本确认就是证书的问题。</li>
+</ol>
+<p><strong>三、解决方案</strong></p>
+<ul>
+<li>方案一： 目前我们使用的是在阿里云上申请的单域名免费证书，只有 Digicert 的国外验证地址可选。 考虑替换国内 ocsp 验证的收费证书。 </li>
+<li>方案二：客户端临时替换成加载 http 页面，根据页面来切换请求的地址是 http/https。</li>
+<li>方案三：开启nginx 和 cdn 的 OCSP stapling， 由于国内cdn节点访问 ocsp 地址也很慢，经过验证，还是会间歇性访问超时</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/06/12/适配-iOS13/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1277,6 +1436,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/01/10/ffmpeg/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="toss156">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Feng's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/01/10/ffmpeg/" class="post-title-link" itemprop="https://toss156.github.io/index.html">FFmpeg 常用命令</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-10 09:21:18 / 修改时间：09:23:52" itemprop="dateCreated datePublished" datetime="2018-01-10T09:21:18+08:00">2018-01-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="FFmpeg-常用命令"><a href="#FFmpeg-常用命令" class="headerlink" title="FFmpeg 常用命令"></a>FFmpeg 常用命令</h1><h2 id="1、手动编译FFmpeg"><a href="#1、手动编译FFmpeg" class="headerlink" title="1、手动编译FFmpeg"></a>1、手动编译FFmpeg</h2><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 安装依赖</span></span><br><span class="line">brew install automake fdk-aac lame libass libtool libvorbis libvpx opus sdl shtool texi2html theora wget x264 x265 xvid yasm  </span><br><span class="line"></span><br><span class="line"><span class="meta"># configure</span></span><br><span class="line">./configure  --prefix=/usr/<span class="keyword">local</span> --<span class="keyword">enable</span>-gpl --<span class="keyword">enable</span>-nonfree --<span class="keyword">enable</span>-libass --<span class="keyword">enable</span>-libfdk-aac --<span class="keyword">enable</span>-libfreetype --<span class="keyword">enable</span>-libmp3lame --<span class="keyword">enable</span>-libopus --<span class="keyword">enable</span>-libtheora --<span class="keyword">enable</span>-libvorbis --<span class="keyword">enable</span>-libvpx --<span class="keyword">enable</span>-libx264 --<span class="keyword">enable</span>-libx265 --<span class="keyword">enable</span>-ffplay --<span class="keyword">enable</span>-libxvid --extra-ldflags=-L/usr/<span class="keyword">local</span>/<span class="keyword">lib</span> </span><br><span class="line"></span><br><span class="line"><span class="meta"># 编译</span></span><br><span class="line"> <span class="built_in">make</span> &amp;&amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h2 id="2、通过-brew-安装-FFmpeg"><a href="#2、通过-brew-安装-FFmpeg" class="headerlink" title="2、通过 brew 安装 FFmpeg"></a>2、通过 brew 安装 FFmpeg</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Mac 上安装FFmpeg, 包含ffplay和x265支持</span></span><br><span class="line">brew install ffmpeg --<span class="keyword">with</span>-fdk-aac --<span class="keyword">with</span>-sdl2 --<span class="keyword">with</span>-freetype --<span class="keyword">with</span>-libass --<span class="keyword">with</span>-libquvi --<span class="keyword">with</span>-libvorbis --<span class="keyword">with</span>-libvpx --<span class="keyword">with</span>-opus --<span class="keyword">with</span>-x265 --<span class="keyword">with</span>-x264</span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果已经安装，可以通过下面命令重新安装</span></span><br><span class="line">brew reinstall ffmpeg --<span class="keyword">with</span>-xxx</span><br></pre></td></tr></table></figure>
+<h2 id="3、FFmpeg常用命令"><a href="#3、FFmpeg常用命令" class="headerlink" title="3、FFmpeg常用命令"></a>3、FFmpeg常用命令</h2><blockquote>
+<h3 id="H264转H265-命令"><a href="#H264转H265-命令" class="headerlink" title="H264转H265 命令"></a>H264转H265 命令</h3></blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -<span class="selector-tag">i</span> <span class="selector-tag">input</span><span class="selector-class">.file</span> -c:<span class="selector-tag">a</span> copy -c:v libx265 output.file</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="H264-RTMP-Flv流-转-H265-RTMP-Flv"><a href="#H264-RTMP-Flv流-转-H265-RTMP-Flv" class="headerlink" title="H264 RTMP/Flv流 转 H265 RTMP/Flv"></a>H264 RTMP/Flv流 转 H265 RTMP/Flv</h3></blockquote>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#支持H265推流的NodeJs服务器</span></span><br><span class="line">npm install <span class="keyword">node</span><span class="title">-media-server</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">node</span> <span class="title">run</span> app.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在线流转<span class="selector-tag">H265</span> <span class="selector-tag">RTMP</span>流</span><br><span class="line"><span class="selector-tag">ffmpeg</span> <span class="selector-tag">-re</span> <span class="selector-tag">-i</span> <span class="selector-attr">[INPUT]</span> <span class="selector-tag">-c</span><span class="selector-pseudo">:v</span> <span class="selector-tag">libx265</span> <span class="selector-tag">-tune</span> <span class="selector-tag">zerolatency</span> <span class="selector-tag">-c</span><span class="selector-pseudo">:a</span> <span class="selector-tag">copy</span> <span class="selector-tag">-f</span> <span class="selector-tag">flv</span> <span class="selector-tag">rtmp</span>:<span class="comment">//127.0.0.1:1935/live/h265</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/01/10/FLV H265直播相关/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1522,174 +1849,6 @@
 <li><a href="https://ffmpeg.org/pipermail/ffmpeg-devel/2016-January/188138.html" target="_blank" rel="noopener">[FFmpeg-devel] Add ARM64 NEON optimization for HEVC decoder</a></li>
 <li><a href="http://ffmpeg.org/pipermail/ffmpeg-devel/2017-November/220877.html" target="_blank" rel="noopener">[FFmpeg-devel] [PATCH] 8-bit hevc decoding optimization on aarch64 with neon</a></li>
 </ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2018/01/10/ffmpeg/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="toss156">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://tva4.sinaimg.cn/crop.0.0.512.512.180/005YJu3hjw8epjd7tbqrlj30e80e8dg4.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Feng's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/01/10/ffmpeg/" class="post-title-link" itemprop="https://toss156.github.io/index.html">FFmpeg 常用命令</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-01-10 09:21:18 / 修改时间：09:23:52" itemprop="dateCreated datePublished" datetime="2018-01-10T09:21:18+08:00">2018-01-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/iOS开发/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="FFmpeg-常用命令"><a href="#FFmpeg-常用命令" class="headerlink" title="FFmpeg 常用命令"></a>FFmpeg 常用命令</h1><h2 id="1、手动编译FFmpeg"><a href="#1、手动编译FFmpeg" class="headerlink" title="1、手动编译FFmpeg"></a>1、手动编译FFmpeg</h2><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 安装依赖</span></span><br><span class="line">brew install automake fdk-aac lame libass libtool libvorbis libvpx opus sdl shtool texi2html theora wget x264 x265 xvid yasm  </span><br><span class="line"></span><br><span class="line"><span class="meta"># configure</span></span><br><span class="line">./configure  --prefix=/usr/<span class="keyword">local</span> --<span class="keyword">enable</span>-gpl --<span class="keyword">enable</span>-nonfree --<span class="keyword">enable</span>-libass --<span class="keyword">enable</span>-libfdk-aac --<span class="keyword">enable</span>-libfreetype --<span class="keyword">enable</span>-libmp3lame --<span class="keyword">enable</span>-libopus --<span class="keyword">enable</span>-libtheora --<span class="keyword">enable</span>-libvorbis --<span class="keyword">enable</span>-libvpx --<span class="keyword">enable</span>-libx264 --<span class="keyword">enable</span>-libx265 --<span class="keyword">enable</span>-ffplay --<span class="keyword">enable</span>-libxvid --extra-ldflags=-L/usr/<span class="keyword">local</span>/<span class="keyword">lib</span> </span><br><span class="line"></span><br><span class="line"><span class="meta"># 编译</span></span><br><span class="line"> <span class="built_in">make</span> &amp;&amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
-<h2 id="2、通过-brew-安装-FFmpeg"><a href="#2、通过-brew-安装-FFmpeg" class="headerlink" title="2、通过 brew 安装 FFmpeg"></a>2、通过 brew 安装 FFmpeg</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Mac 上安装FFmpeg, 包含ffplay和x265支持</span></span><br><span class="line">brew install ffmpeg --<span class="keyword">with</span>-fdk-aac --<span class="keyword">with</span>-sdl2 --<span class="keyword">with</span>-freetype --<span class="keyword">with</span>-libass --<span class="keyword">with</span>-libquvi --<span class="keyword">with</span>-libvorbis --<span class="keyword">with</span>-libvpx --<span class="keyword">with</span>-opus --<span class="keyword">with</span>-x265 --<span class="keyword">with</span>-x264</span><br><span class="line"></span><br><span class="line"><span class="meta"># 如果已经安装，可以通过下面命令重新安装</span></span><br><span class="line">brew reinstall ffmpeg --<span class="keyword">with</span>-xxx</span><br></pre></td></tr></table></figure>
-<h2 id="3、FFmpeg常用命令"><a href="#3、FFmpeg常用命令" class="headerlink" title="3、FFmpeg常用命令"></a>3、FFmpeg常用命令</h2><blockquote>
-<h3 id="H264转H265-命令"><a href="#H264转H265-命令" class="headerlink" title="H264转H265 命令"></a>H264转H265 命令</h3></blockquote>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -<span class="selector-tag">i</span> <span class="selector-tag">input</span><span class="selector-class">.file</span> -c:<span class="selector-tag">a</span> copy -c:v libx265 output.file</span><br></pre></td></tr></table></figure>
-<blockquote>
-<h3 id="H264-RTMP-Flv流-转-H265-RTMP-Flv"><a href="#H264-RTMP-Flv流-转-H265-RTMP-Flv" class="headerlink" title="H264 RTMP/Flv流 转 H265 RTMP/Flv"></a>H264 RTMP/Flv流 转 H265 RTMP/Flv</h3></blockquote>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#支持H265推流的NodeJs服务器</span></span><br><span class="line">npm install <span class="keyword">node</span><span class="title">-media-server</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">node</span> <span class="title">run</span> app.js</span><br></pre></td></tr></table></figure>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在线流转<span class="selector-tag">H265</span> <span class="selector-tag">RTMP</span>流</span><br><span class="line"><span class="selector-tag">ffmpeg</span> <span class="selector-tag">-re</span> <span class="selector-tag">-i</span> <span class="selector-attr">[INPUT]</span> <span class="selector-tag">-c</span><span class="selector-pseudo">:v</span> <span class="selector-tag">libx265</span> <span class="selector-tag">-tune</span> <span class="selector-tag">zerolatency</span> <span class="selector-tag">-c</span><span class="selector-pseudo">:a</span> <span class="selector-tag">copy</span> <span class="selector-tag">-f</span> <span class="selector-tag">flv</span> <span class="selector-tag">rtmp</span>:<span class="comment">//127.0.0.1:1935/live/h265</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -2227,7 +2386,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2326,7 +2485,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

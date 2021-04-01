@@ -108,24 +108,26 @@
 
 
 
-  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041- (double)getCurrentBatteryLevel &amp;#123;    UIApplication *app = [UIApplication sharedApplication];    if (app.applicationState">
+  <meta name="description" content="一、问题说明 运营反馈近期客户端页面加载变慢，经常需要10~20s以上的时间才能显示出，甚至加载不出来，需要手动退出，重新打开才能出现。 二、问题分析  首先怀疑是DNS问题，用的是运营商的作为首选DNS，修改成114.114.114.114  没有效果。 通过输出请求连接返回时间，发现部分 https 资源访问极慢，切换到 http 地址，访问变快 初步怀疑是 ssl 证书引起的，测试发现，加载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS获取电量的方法">
-<meta property="og:url" content="https://toss156.github.io/2019/02/13/iOS获取电量的方法/index.html">
+<meta property="og:title" content="https加载慢的问题分析">
+<meta property="og:url" content="https://toss156.github.io/2021/04/01/https加载慢的问题分析/index.html">
 <meta property="og:site_name" content="Feng&#39;s Notes">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041- (double)getCurrentBatteryLevel &amp;#123;    UIApplication *app = [UIApplication sharedApplication];    if (app.applicationState">
+<meta property="og:description" content="一、问题说明 运营反馈近期客户端页面加载变慢，经常需要10~20s以上的时间才能显示出，甚至加载不出来，需要手动退出，重新打开才能出现。 二、问题分析  首先怀疑是DNS问题，用的是运营商的作为首选DNS，修改成114.114.114.114  没有效果。 通过输出请求连接返回时间，发现部分 https 资源访问极慢，切换到 http 地址，访问变快 初步怀疑是 ssl 证书引起的，测试发现，加载">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-13T09:10:36.695Z">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8618a68152964f82b3d34c506f98dff9~tplv-k3u1fbpfcp-watermark.image">
+<meta property="og:updated_time" content="2021-04-01T02:45:11.658Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS获取电量的方法">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041- (double)getCurrentBatteryLevel &amp;#123;    UIApplication *app = [UIApplication sharedApplication];    if (app.applicationState">
+<meta name="twitter:title" content="https加载慢的问题分析">
+<meta name="twitter:description" content="一、问题说明 运营反馈近期客户端页面加载变慢，经常需要10~20s以上的时间才能显示出，甚至加载不出来，需要手动退出，重新打开才能出现。 二、问题分析  首先怀疑是DNS问题，用的是运营商的作为首选DNS，修改成114.114.114.114  没有效果。 通过输出请求连接返回时间，发现部分 https 资源访问极慢，切换到 http 地址，访问变快 初步怀疑是 ssl 证书引起的，测试发现，加载">
+<meta name="twitter:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8618a68152964f82b3d34c506f98dff9~tplv-k3u1fbpfcp-watermark.image">
 
 
 
 
 
 
-  <link rel="canonical" href="https://toss156.github.io/2019/02/13/iOS获取电量的方法/">
+  <link rel="canonical" href="https://toss156.github.io/2021/04/01/https加载慢的问题分析/">
 
 
 
@@ -135,7 +137,7 @@
   };
 </script>
 
-  <title>iOS获取电量的方法 | Feng's Notes</title>
+  <title>https加载慢的问题分析 | Feng's Notes</title>
   
 
 
@@ -321,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2019/02/13/iOS获取电量的方法/">
+    <link itemprop="mainEntityOfPage" href="https://toss156.github.io/2021/04/01/https加载慢的问题分析/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="toss156">
@@ -338,7 +340,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">iOS获取电量的方法
+          <h2 class="post-title" itemprop="name headline">https加载慢的问题分析
               
             
           </h2>
@@ -363,7 +365,7 @@
                 
               
 
-              <time title="创建时间：2019-02-13 16:38:39 / 修改时间：17:10:36" itemprop="dateCreated datePublished" datetime="2019-02-13T16:38:39+08:00">2019-02-13</time>
+              <time title="创建时间：2021-04-01 10:44:55 / 修改时间：10:45:11" itemprop="dateCreated datePublished" datetime="2021-04-01T10:44:55+08:00">2021-04-01</time>
             
 
             
@@ -401,7 +403,24 @@
       
 
       
-        <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">double</span>)getCurrentBatteryLevel &#123;</span><br><span class="line">    <span class="built_in">UIApplication</span> *app = [<span class="built_in">UIApplication</span> sharedApplication];</span><br><span class="line">    <span class="keyword">if</span> (app.applicationState == <span class="built_in">UIApplicationStateActive</span> || app.applicationState == <span class="built_in">UIApplicationStateInactive</span>) &#123;</span><br><span class="line">        <span class="keyword">id</span> statusBar;</span><br><span class="line">        <span class="comment">// 判断是否是iPhoneX, 兼容iOS12</span></span><br><span class="line">        <span class="keyword">if</span> ([[app valueForKeyPath:<span class="string">@"_statusBar"</span>] isKindOfClass:<span class="built_in">NSClassFromString</span>(<span class="string">@"UIStatusBar_Modern"</span>)]) &#123;</span><br><span class="line">            statusBar = (<span class="built_in">UIView</span> *)[[app valueForKeyPath:<span class="string">@"_statusBar"</span>] valueForKeyPath:<span class="string">@"_statusBar"</span>];</span><br><span class="line">            <span class="built_in">NSDictionary</span> *items = [statusBar valueForKeyPath:<span class="string">@"_items"</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (items &amp;&amp; [items isKindOfClass:[<span class="built_in">NSDictionary</span> <span class="keyword">class</span>]]) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">id</span> item <span class="keyword">in</span> [items allValues]) &#123;</span><br><span class="line">                    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, <span class="built_in">NSStringFromClass</span>([item <span class="keyword">class</span>]));</span><br><span class="line">                    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([item <span class="keyword">class</span>]) caseInsensitiveCompare:<span class="string">@"_UIStatusBarBatteryItem"</span>] == <span class="built_in">NSOrderedSame</span>) &#123;</span><br><span class="line">                        <span class="built_in">UIView</span> *batteryView = [item valueForKeyPath:<span class="string">@"_batteryView"</span>];</span><br><span class="line">                        <span class="keyword">double</span> batteryLevel = [[batteryView valueForKeyPath:<span class="string">@"_chargePercent"</span>] doubleValue];</span><br><span class="line">                        <span class="keyword">if</span> (batteryLevel &gt; <span class="number">0</span> &amp;&amp; batteryLevel &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">                            <span class="keyword">return</span> batteryLevel;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            statusBar = (<span class="built_in">UIView</span> *)[app valueForKeyPath:<span class="string">@"_statusBar"</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">id</span> aview <span class="keyword">in</span> [statusBar subviews]) &#123;</span><br><span class="line">                <span class="keyword">int</span> batteryLevel = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">id</span> bview <span class="keyword">in</span> [aview subviews]) &#123;</span><br><span class="line">                    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>([bview <span class="keyword">class</span>]) caseInsensitiveCompare:<span class="string">@"UIStatusBarBatteryItemView"</span>] == <span class="built_in">NSOrderedSame</span>) &#123;</span><br><span class="line">                        Ivar ivar = class_getInstanceVariable([bview <span class="keyword">class</span>],<span class="string">"_capacity"</span>);</span><br><span class="line">                        <span class="keyword">if</span> (ivar) &#123;</span><br><span class="line">                            batteryLevel = ((<span class="keyword">int</span> (*)(<span class="keyword">id</span>, Ivar))object_getIvar)(bview, ivar);</span><br><span class="line">                            <span class="keyword">if</span> (batteryLevel &gt; <span class="number">0</span> &amp;&amp; batteryLevel &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">                                <span class="keyword">return</span> batteryLevel / <span class="number">100.0</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><strong>一、问题说明</strong></p>
+<p>运营反馈近期客户端页面加载变慢，经常需要10~20s以上的时间才能显示出，甚至加载不出来，需要手动退出，重新打开才能出现。</p>
+<p><strong>二、问题分析</strong></p>
+<ol>
+<li>首先怀疑是DNS问题，用的是运营商的作为首选DNS，修改成114.114.114.114  没有效果。</li>
+<li>通过输出请求连接返回时间，发现部分 https 资源访问极慢，切换到 http 地址，访问变快</li>
+<li>初步怀疑是 ssl 证书引起的，测试发现，加载缓慢的https地址的证书都是 digicert 的，证书校验ocsp地址为 <a href="http://ocsp.digicert.com，通过chinaz" target="_blank" rel="noopener">http://ocsp.digicert.com，通过chinaz</a> 检测，目前这个地址国内访问很慢  </li>
+</ol>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8618a68152964f82b3d34c506f98dff9~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<ol>
+<li>通过替换加载链接：<a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a> (GlobalSign证书)  <a href="https://suowo.cn/" target="_blank" rel="noopener">https://suowo.cn/</a> (Digicert证书, oscp地址与我们相同) 验证。 百度加载很快，suowo.cn 的表现和我们一致，加载需要很久，基本确认就是证书的问题。</li>
+</ol>
+<p><strong>三、解决方案</strong></p>
+<ul>
+<li>方案一： 目前我们使用的是在阿里云上申请的单域名免费证书，只有 Digicert 的国外验证地址可选。 考虑替换国内 ocsp 验证的收费证书。 </li>
+<li>方案二：客户端临时替换成加载 http 页面，根据页面来切换请求的地址是 http/https。</li>
+<li>方案三：开启nginx 和 cdn 的 OCSP stapling， 由于国内cdn节点访问 ocsp 地址也很慢，经过验证，还是会间歇性访问超时</li>
+</ul>
 
       
     </div>
@@ -432,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/30/ReplayKit2 直播/" rel="next" title="ReplayKit2 直播">
-                <i class="fa fa-chevron-left"></i> ReplayKit2 直播
+              <a href="/2019/06/12/适配-iOS13/" rel="next" title="适配 iOS13">
+                <i class="fa fa-chevron-left"></i> 适配 iOS13
               </a>
             
           </div>
@@ -441,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/07/基于GCDAsynSocket 实现 SSL 通信/" rel="prev" title="基于GCDAsynSocket 实现 SSL 通信">
-                基于GCDAsynSocket 实现 SSL 通信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
